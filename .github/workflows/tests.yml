@@ -14,4 +14,4 @@ jobs:
       with:
         python-version: '3.14'
     - run: pip install -r api_testing/requirements.txt
-    - run: pytest api_testing/tests
+    - run: pytest api_testing/tests -v
