@@ -15,7 +15,12 @@ class LoginPage:
 
     def open(self, link):
         self.driver.get(link)
-       
+     
+    def login(self, username, password):
+        self.enter_username(username)
+        self.enter_password(password)
+        self.click_login()
+     
     def enter_username(self, username):
         username_section = self.wait.until(EC.visibility_of_element_located(self.username_locator))
         username_section.send_keys(username)
