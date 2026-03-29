@@ -18,13 +18,8 @@ def test_login(driver_setup, username, password, expected):
         
         logging.info("opening login page")
         login_page.open("https://www.saucedemo.com/")
-        logging.info("Entering username")
-        login_page.enter_username(username) 
-        logging.info("Entering password")
-        login_page.enter_password(password)
-        logging.info("Clicking login button")
-        login_page.click_login()
-        
+        logging.info("Entering username and password")
+        login_page.login(username, password) 
         
         try:
             if expected:
