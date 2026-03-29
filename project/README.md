@@ -1,5 +1,5 @@
 # QA Automation Project 🚀
-
+# This project is built as part of my QA Automation learning journey
 ## 📌 Overview
 
 This project is an end-to-end QA Automation framework built using **Selenium, Pytest, and Page Object Model (POM)**.
