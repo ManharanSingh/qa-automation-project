@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-
+import os
 
 @pytest.fixture
 def driver_setup():
@@ -19,5 +19,6 @@ def pytest_runtest_makereport(item, call):
         driver = item.funcargs.get("driver_setup")
 
         if driver:
+            os.makedirs("screenshots", exist_ok=True)
             screenshot_name = f"screenshots/{item.name}.png"
             driver.save_screenshot(screenshot_name)
