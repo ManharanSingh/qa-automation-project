@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r ecommerce-ui-automation-framework/requirements.txt
+        pip install -r ecommerce-ui-automation-framework/requirement.txt
 
     - name: Run tests
       run: |
