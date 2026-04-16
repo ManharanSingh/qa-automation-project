@@ -1,7 +1,6 @@
-# QA Automation Project 🚀
+# QA Automation Project 
 # This project is built as part of my QA Automation learning journey
-## 📌 Overview
-
+## overview
 This project is an end-to-end QA Automation framework built using **Selenium, Pytest, and Page Object Model (POM)**.
 
 It automates key user flows of the SauceDemo application:
@@ -13,7 +12,7 @@ It automates key user flows of the SauceDemo application:
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 * Python
 * Selenium WebDriver
@@ -23,7 +22,7 @@ It automates key user flows of the SauceDemo application:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 project/
@@ -45,7 +44,7 @@ project/
 
 ---
 
-## ✅ Features Implemented
+## Features Implemented
 
 * ✔ Login validation (success & failure)
 * ✔ Add item to cart
@@ -57,10 +56,9 @@ project/
 
 ---
 
-## ▶️ How to Run Tests
+## How to Run Tests
 
 ### Step 1: Install dependencies
-
 ```
 pip install -r requirements.txt
 ```
@@ -68,12 +66,12 @@ pip install -r requirements.txt
 ### Step 2: Run tests
 
 ```
-python -m pytest -v
+python -m pytest -v (for terminal output)
 ```
-
+python -m pytest --html=report.html ( for html report)
 ---
 
-## 📊 Test Scenarios Covered
+## Test Scenarios Covered
 
 * Valid login
 * Invalid login (locked user)
@@ -83,13 +81,13 @@ python -m pytest -v
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 (Screenshots are automatically captured on test failure)
 
 ---
 
-## 🧠 Key Learnings
+## Key Learnings
 
 * Building scalable test automation using POM
 * Writing reliable tests using explicit waits
@@ -98,7 +96,7 @@ python -m pytest -v
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 * Add API testing integration
 * CI/CD pipeline (GitHub Actions)
@@ -107,6 +105,6 @@ python -m pytest -v
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 ManharanSingh
