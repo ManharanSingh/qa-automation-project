@@ -1,12 +1,8 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import os
 
-@pytest.fixture
-def driver_setup():
-   from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import pytest
 
 @pytest.fixture
 def driver_setup():
