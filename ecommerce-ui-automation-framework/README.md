@@ -68,8 +68,9 @@ pip install -r requirements.txt
 ```
 python -m pytest -v (for terminal output)
 ```
-python -m pytest --html=report.html ( for html report)
+OR (html report)
 ---
+python -m pytest --html=report.html
 
 ## Test Scenarios Covered
 
