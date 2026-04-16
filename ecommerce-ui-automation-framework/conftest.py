@@ -2,7 +2,9 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
+import sys
 
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 @pytest.fixture
 def driver_setup():
