@@ -1,111 +1,130 @@
-# QA Automation Project 
-# This project is built as part of my QA Automation learning journey
-## overview
-This project is an end-to-end QA Automation framework built using **Selenium, Pytest, and Page Object Model (POM)**.
+# 🚀 E-commerce UI Automation Framework
 
-It automates key user flows of the SauceDemo application:
-
-* Login functionality
-* Add to cart
-* Remove items
-* Checkout process
+A scalable **QA Automation Framework** built using **Selenium, Pytest, and Page Object Model (POM)** to automate end-to-end user workflows of a real-world web application.
 
 ---
 
-## Tech Stack
+## 📌 Overview
 
-* Python
-* Selenium WebDriver
-* Pytest
-* Page Object Model (POM)
-* Logging & Screenshot handling
+This framework automates critical user journeys of the SauceDemo application, focusing on reliability, maintainability, and real-world automation practices.
+
+### Covered Workflows:
+
+* User Login (Valid & Invalid scenarios)
+* Product Add to Cart
+* Cart Management (Remove items)
+* End-to-End Checkout Process
 
 ---
 
-## Project Structure
+## 🛠️ Tech Stack
+
+* **Python**
+* **Selenium WebDriver**
+* **Pytest**
+* **Page Object Model (POM)**
+* **Custom Logging System**
+* **Pytest HTML Reports**
+* **GitHub Actions (CI/CD)**
+
+---
+
+## ⚙️ Key Features
+
+✔ Modular Page Object Model design
+✔ Reusable BasePage for common actions
+✔ Config-based test data management
+✔ Parametrized test execution
+✔ Automatic screenshot capture on test failure
+✔ HTML test reporting
+✔ CI integration with GitHub Actions
+
+---
+
+## 📁 Project Structure
 
 ```
-project/
+ecommerce-ui-automation-framework/
 │
 ├── pages/          # Page Object classes
-│   ├── login_page.py
-│   ├── inventory_page.py
-│   └── checkout_page.py
-│
 ├── tests/          # Test cases
-│   ├── test_login.py
-│   ├── test_cart.py
-│   └── test_checkout.py
-│
-├── conftest.py     # Pytest fixtures
-├── requirements.txt
-└── README.md
+├── utils/          # BasePage & Logger
+├── config/         # Configurations
+├── reports/        # Test reports
+├── screenshots/    # Failure screenshots
+├── logs/           # Execution logs
+├── conftest.py     # Pytest fixtures & hooks
+└── requirements.txt
 ```
 
 ---
 
-## Features Implemented
+## ▶️ How to Run Tests
 
-* ✔ Login validation (success & failure)
-* ✔ Add item to cart
-* ✔ Remove item from cart
-* ✔ Complete checkout flow
-* ✔ Parametrized tests
-* ✔ Logging for debugging
-* ✔ Screenshot capture on failure
+### 1. Install dependencies
 
----
-
-## How to Run Tests
-
-### Step 1: Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
-### Step 2: Run tests
+### 2. Run tests
 
 ```
-python -m pytest -v (for terminal output)
+pytest -v
 ```
-OR (html report)
----
-python -m pytest --html=report.html
 
-## Test Scenarios Covered
+### 3. Generate HTML report
 
-* Valid login
-* Invalid login (locked user)
-* Add product to cart
-* Remove product from cart
-* Complete purchase flow
+```
+pytest --html=reports/report.html
+```
 
 ---
 
-## Screenshots
+## 📊 Test Scenarios
 
-(Screenshots are automatically captured on test failure)
-
----
-
-## Key Learnings
-
-* Building scalable test automation using POM
-* Writing reliable tests using explicit waits
-* Handling test failures with logging and screenshots
-* Structuring projects for real-world QA automation
+* ✅ Valid Login
+* ❌ Invalid Login (Locked User)
+* 🛒 Add Product to Cart
+* ❌ Remove Product from Cart
+* 💳 Complete Checkout Flow
 
 ---
 
-## Future Improvements
+## 🖼️ Reporting & Screenshots
 
-* Add API testing integration
-* CI/CD pipeline (GitHub Actions)
-* Test data externalization (JSON/CSV)
-* Cross-browser testing
+* HTML reports generated after execution
+* Screenshots automatically captured on test failure
+* Logs stored for debugging and traceability
 
 ---
 
-## Author
+## 🔄 CI/CD Integration
 
-ManharanSingh
+This project uses **GitHub Actions** to automatically run tests on every push.
+
+---
+
+## 📚 Key Learnings
+
+* Designing scalable automation frameworks
+* Implementing reusable test architecture
+* Handling synchronization using explicit waits
+* Improving debugging using logs and reports
+* Integrating automation with CI pipelines
+
+---
+
+## 🚧 Future Enhancements
+
+* API Automation Integration
+* Cross-browser execution
+* Data-driven testing using external files
+* Parallel test execution
+
+---
+
+## 👨‍💻 Author
+
+**Manharan Singh**
+
