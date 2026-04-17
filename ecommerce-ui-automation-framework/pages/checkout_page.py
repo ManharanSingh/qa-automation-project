@@ -18,17 +18,18 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
 
     def fill_details(self, name, last_name, zip_code):
+        self.wait.until(EC.url_contains("checkout-step-one"))
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
         self.click(self.continue_btn)
-        self.wait.until(EC.url_contains("checkout-step-two"))
-        
+                
     def finish_order(self):
+        self.wait.until(EC.url_contains("checkout-step-two"))
         self.click(self.finish_btn)
-        self.wait.until(EC.url_contains("checkout-complete"))
         
     def verify_success_message(self):
+        self.wait.until(EC.url_contains("checkout-complete"))
         success_message = self.get_text(self.success_message)
 
         return success_message
