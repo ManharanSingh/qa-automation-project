@@ -13,6 +13,7 @@ class CheckoutPage(BasePage):
         self.success_message = (By.TAG_NAME, "h2")
 
     def click_checkout(self):
+        self.wait.until(EC.url_contains("cart"))
         self.click(self.checkout_btn)
 
     def fill_details(self, name, last_name, zip_code):
