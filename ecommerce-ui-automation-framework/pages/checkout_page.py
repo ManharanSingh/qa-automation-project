@@ -24,6 +24,7 @@ class CheckoutPage(BasePage):
         self.click(self.continue_btn)
         
     def finish_order(self):
+        self.wait.until(EC.url_contains("checkout-step-two"))
         self.click(self.finish_btn)
         
     def verify_success_message(self):
