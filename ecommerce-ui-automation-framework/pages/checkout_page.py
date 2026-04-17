@@ -9,7 +9,7 @@ class CheckoutPage(BasePage):
         self.postal_code_locator = (By.CSS_SELECTOR, "#postal-code")
         self.checkout_btn = (By.ID, "checkout")
         self.continue_btn = (By.CSS_SELECTOR, "#continue")
-        self.finish_btn = (By.ID, "finish")
+        self.finish_btn = (By.NAME, "finish")
         self.success_message = (By.TAG_NAME, "h2")
 
     def click_checkout(self):
