@@ -7,7 +7,7 @@ class CheckoutPage(BasePage):
         self.first_name_locator = (By.CSS_SELECTOR, "#first-name")
         self.last_name_locator = (By.CSS_SELECTOR, "#last-name")
         self.postal_code_locator = (By.CSS_SELECTOR, "#postal-code")
-        self.checkout_btn = (By.CSS_SELECTOR, "#checkout")
+        self.checkout_btn = (By.ID, "checkout")
         self.continue_btn = (By.CSS_SELECTOR, "#continue")
         self.finish_btn = (By.CSS_SELECTOR, "#finish")
         self.success_message = (By.TAG_NAME, "h2")
