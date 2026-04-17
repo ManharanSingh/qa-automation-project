@@ -15,7 +15,7 @@ class InventoryPage(BasePage):
 
     def go_to_cart(self):
         self.click(self.cart_button)
-        self.until(EC.url_contains("cart"))
+        self.wait.until(EC.url_contains("cart"))
 
     def get_cart_count(self):
         cart_list = self.wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, ".cart_item")))
