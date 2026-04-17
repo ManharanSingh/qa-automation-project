@@ -17,6 +17,7 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
         
     def fill_details(self, name, last_name, zip_code):
+        self.wait.until(EC.url_contains("checkout-step-one")
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
