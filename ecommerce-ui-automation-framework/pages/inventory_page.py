@@ -25,7 +25,7 @@ class InventoryPage(BasePage):
         self.click(self.remove_backpack_btn)
 
     def get_removed_items_count(self):
-        items = self.driver.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        items = self.driver.find_elements(By.CSS_SELECTOR, ".cart_item")
         
         return len(items)
         
