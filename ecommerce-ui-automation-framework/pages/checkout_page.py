@@ -7,7 +7,7 @@ class CheckoutPage(BasePage):
         super().__init__(driver)
         self.first_name_locator = (By.ID, "first-name")
         self.last_name_locator = (By.ID, "last-name")
-        self.postal_code_locator = (By.ID, "#postal-code")
+        self.postal_code_locator = (By.ID, "postal-code")
         self.checkout_btn = (By.ID, "checkout")
         self.continue_btn = (By.ID, "continue")
         self.finish_btn = (By.ID, "finish")
@@ -15,7 +15,6 @@ class CheckoutPage(BasePage):
 
     def click_checkout(self):
         self.click(self.checkout_btn)
-        self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
         
     def fill_details(self, name, last_name, zip_code):
         self.type(self.first_name_locator, name)
