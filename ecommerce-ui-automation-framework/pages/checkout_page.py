@@ -22,7 +22,7 @@ class CheckoutPage(BasePage):
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
-        time.sleep(3)
+        time.sleep(10)
         self.driver.save_screenshot('before.png')
         self.click(self.continue_btn)
         self.driver.save_screenshot("after.png")
