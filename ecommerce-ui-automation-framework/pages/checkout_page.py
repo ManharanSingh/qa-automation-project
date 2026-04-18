@@ -21,6 +21,8 @@ class CheckoutPage(BasePage):
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
         self.click(self.continue_btn)
+
+        self.wait.until(visibility_of_element_located(self.finish_btn))
     
     def finish_order(self):
         self.click(self.finish_btn)
