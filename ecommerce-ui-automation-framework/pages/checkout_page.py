@@ -14,12 +14,10 @@ class CheckoutPage(BasePage):
         self.success_message = (By.TAG_NAME, "h2")
 
     def click_checkout(self):
-        self.wait.until(EC.url_contains("cart"))
-        self.wait.until(EC.visibility_of_element_located(self.checkout_btn))
         self.click(self.checkout_btn)
+        self.wait.until(EC.url_contains("checkout-step-one"))
         
     def fill_details(self, name, last_name, zip_code):
-        self.wait.until(EC.url_contains("checkout-step-one"))
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
@@ -31,7 +29,6 @@ class CheckoutPage(BasePage):
         self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "complete-header")))
         
     def verify_success_message(self):
-        self.wait.until(EC.url_contains("checkout-complete"))
         success_message = self.get_text(self.success_message)
 
         return success_message
