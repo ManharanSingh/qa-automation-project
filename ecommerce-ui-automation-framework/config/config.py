@@ -6,4 +6,4 @@ PASSWORD = "secret_sauce"
 
 FIRST_NAME = "Manharan"
 LAST_NAME = "Maravi"
-ZIP_CODE = "501401"
+ZIP_CODE =  501401
