@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from utils.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
-import time
+
 
 class CheckoutPage(BasePage):
     def __init__(self, driver):
@@ -20,12 +20,14 @@ class CheckoutPage(BasePage):
     def fill_details(self, name, last_name, zip_code):
 
         self.type(self.first_name_locator, name)
+        self.driver.save_screenshot('name.png')
         self.type(self.last_name_locator, last_name)
+        self.driver.save_screenshot('lastname.png')
         self.type(self.postal_code_locator, zip_code)
-        time.sleep(10)
-        self.driver.save_screenshot('before.png')
+        self.driver.save_screenshot('zip.png')
+        self.driver.save_screenshot('before_continue.png')
         self.click(self.continue_btn)
-        self.driver.save_screenshot("after.png")
+        self.driver.save_screenshot("continue.png")
 
 
     
