@@ -25,6 +25,7 @@ class CheckoutPage(BasePage):
         self.driver.save_screenshot('lastname.png')
         self.type(self.postal_code_locator, zip_code)
         self.driver.save_screenshot('zip.png')
+        self.wait.until(lambda d: d.find_element(*self.postal_code_locator).get_attribute("value") == zip_code)
         self.driver.save_screenshot('before_continue.png')
         self.click(self.continue_btn)
         self.driver.save_screenshot("continue.png")
