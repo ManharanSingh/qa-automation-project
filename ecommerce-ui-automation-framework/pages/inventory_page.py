@@ -22,7 +22,6 @@ class InventoryPage(BasePage):
         return len(cart_list)  
     
     def remove_item(self):
-        self.is_visible(self.remove_backpack_btn)
         self.click(self.remove_backpack_btn)
 
     def get_removed_items_count(self):
