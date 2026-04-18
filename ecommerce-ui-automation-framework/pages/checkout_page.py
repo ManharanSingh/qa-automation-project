@@ -18,23 +18,13 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
         
     def fill_details(self, name, last_name, zip_code):
-
         self.type(self.first_name_locator, name)
-        self.driver.save_screenshot('name.png')
         self.type(self.last_name_locator, last_name)
-        self.driver.save_screenshot('lastname.png')
         self.type(self.postal_code_locator, zip_code)
-        self.driver.save_screenshot('zip.png')
-        self.wait.until(lambda d: d.find_element(*self.postal_code_locator).get_attribute("value") == zip_code)
-        self.driver.save_screenshot('before_continue.png')
         self.click(self.continue_btn)
-        self.driver.save_screenshot("continue.png")
-
-
     
     def finish_order(self):
         self.click(self.finish_btn)
-        self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "complete-header")))
         
     def verify_success_message(self):
         success_message = self.get_text(self.success_message)
