@@ -18,8 +18,11 @@ class BasePage:
         
     def type(self, locator, text):
         element = self.wait.until(EC.visibility_of_element_located(locator))
+        element.clear()
         element.send_keys(text)
 
+        self.wait.until(lambda d: element.get_attribute("value") == str(text))
+        
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
     
