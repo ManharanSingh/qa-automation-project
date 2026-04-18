@@ -21,10 +21,10 @@ class CheckoutPage(BasePage):
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
-
-        self.wait.until(lambda d: d.find_element(*self.postal_code_locator).get_attribute("value") == zip_code)
         
-        self.click(self.continue_btn)
+        verify = self.wait.until(lambda d: d.find_element(*self.postal_code_locator).get_attribute("value") == zip_code)
+        if verify:
+           self.click(self.continue_btn)
 
         self.wait.until(EC.visibility_of_element_located(self.finish_btn))
     
