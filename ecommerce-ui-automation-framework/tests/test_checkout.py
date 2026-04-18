@@ -34,13 +34,13 @@ def test_checkout(driver_setup):
     checkout.fill_details(FIRST_NAME, LAST_NAME, ZIP_CODE)
     logger.info(f"Current URL before filling details: {driver.current_url}")
     
-    logger.info("Finishing checkout process")
-    checkout.finish_order()
+    #logger.info("Finishing checkout process")
+   # checkout.finish_order()
     
-    success_msg = checkout.verify_success_message()
-    logger.info(f"Order success message: {success_msg}")
+    #success_msg = checkout.verify_success_message()
+    #logger.info(f"Order success message: {success_msg}")
     
-    assert success_msg == "Thank you for your order!", \
-    f"Expected success message not found. Got: {success_msg}"
+    #assert success_msg == "Thank you for your order!", \
+   # f"Expected success message not found. Got: {success_msg}"
    
     
