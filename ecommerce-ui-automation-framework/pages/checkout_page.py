@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from utils.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class CheckoutPage(BasePage):
     def __init__(self, driver):
@@ -20,6 +21,7 @@ class CheckoutPage(BasePage):
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
+        time.sleep(3)
         self.click(self.continue_btn)
 
         self.wait.until(EC.visibility_of_element_located(self.finish_btn))
