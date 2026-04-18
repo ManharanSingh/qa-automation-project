@@ -31,13 +31,13 @@ This framework automates critical user journeys of the SauceDemo application, fo
 
 ## Key Features
 
-[1] Modular Page Object Model design
-[2] Reusable BasePage for common actions
-[3] Config-based test data management
-[4] Parametrized test execution
-[5] Automatic screenshot capture on test failure
-[6] TML test reporting
-[7] CI integration with GitHub Actions
+* Modular Page Object Model design
+* Reusable BasePage for common actions
+* Config-based test data management
+* Parametrized test execution
+* Automatic screenshot capture on test failure
+* TML test reporting
+* CI integration with GitHub Actions
 
 ---
 
