@@ -14,7 +14,7 @@ class BasePage:
         element = self.wait.until(EC.element_to_be_clickable(locator))
         
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-        element.click()
+        self.driver.execute_script("arguments[0].click();", element)
         
     def type(self, locator, text):
         element = self.wait.until(EC.visibility_of_element_located(locator))
