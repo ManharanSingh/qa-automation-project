@@ -1,10 +1,10 @@
-# 🚀 E-commerce UI Automation Framework
+# E-commerce UI Automation Framework
 
 A scalable **QA Automation Framework** built using **Selenium, Pytest, and Page Object Model (POM)** to automate end-to-end user workflows of a real-world web application.
 
 ---
 
-## 📌 Overview
+## Overview
 
 This framework automates critical user journeys of the SauceDemo application, focusing on reliability, maintainability, and real-world automation practices.
 
@@ -17,7 +17,7 @@ This framework automates critical user journeys of the SauceDemo application, fo
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Python**
 * **Selenium WebDriver**
@@ -29,19 +29,19 @@ This framework automates critical user journeys of the SauceDemo application, fo
 
 ---
 
-## ⚙️ Key Features
+## Key Features
 
-✔ Modular Page Object Model design
-✔ Reusable BasePage for common actions
-✔ Config-based test data management
-✔ Parametrized test execution
-✔ Automatic screenshot capture on test failure
-✔ HTML test reporting
-✔ CI integration with GitHub Actions
+1.Modular Page Object Model design
+2.Reusable BasePage for common actions
+3.Config-based test data management
+4.Parametrized test execution
+5.Automatic screenshot capture on test failure
+6.HTML test reporting
+7.CI integration with GitHub Actions
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ecommerce-ui-automation-framework/
@@ -59,7 +59,7 @@ ecommerce-ui-automation-framework/
 
 ---
 
-## ▶️ How to Run Tests
+## How to Run Tests
 
 ### 1. Install dependencies
 
@@ -81,7 +81,7 @@ pytest --html=reports/report.html
 
 ---
 
-## 📊 Test Scenarios
+## Test Scenarios
 
 * ✅ Valid Login
 * ❌ Invalid Login (Locked User)
@@ -91,7 +91,7 @@ pytest --html=reports/report.html
 
 ---
 
-## 🖼️ Reporting & Screenshots
+## Reporting & Screenshots
 
 * HTML reports generated after execution
 * Screenshots automatically captured on test failure
@@ -99,13 +99,13 @@ pytest --html=reports/report.html
 
 ---
 
-## 🔄 CI/CD Integration
+## CI/CD Integration
 
 This project uses **GitHub Actions** to automatically run tests on every push.
 
 ---
 
-## 📚 Key Learnings
+## Key Learnings
 
 * Designing scalable automation frameworks
 * Implementing reusable test architecture
@@ -115,7 +115,7 @@ This project uses **GitHub Actions** to automatically run tests on every push.
 
 ---
 
-## 🚧 Future Enhancements
+## Future Enhancements
 
 * API Automation Integration
 * Cross-browser execution
