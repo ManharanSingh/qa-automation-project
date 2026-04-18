@@ -14,6 +14,7 @@ class CheckoutPage(BasePage):
         self.success_message = (By.TAG_NAME, "h2")
 
     def click_checkout(self):
+        self.wait.until(EC.url_contains("cart"))
         self.wait.until(EC.visibility_of_element_located(self.checkout_btn))
         self.click(self.checkout_btn)
         
