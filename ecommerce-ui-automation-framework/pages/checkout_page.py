@@ -18,7 +18,6 @@ class CheckoutPage(BasePage):
         self.wait.until(EC.url_contains("checkout-step-one"))
         
     def fill_details(self, name, last_name, zip_code):
-        logger.info(f"Current URL before filling details: {driver.current_url}")
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
