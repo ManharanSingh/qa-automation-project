@@ -21,7 +21,6 @@ class CheckoutPage(BasePage):
         self.type(self.first_name_locator, name)
         self.type(self.last_name_locator, last_name)
         self.type(self.postal_code_locator, zip_code)
-        self.wait.until(EC.text_to_be_present_in_element_value(self.postal_code_locator, zip_code))
        
         self.click(self.continue_btn)
 
