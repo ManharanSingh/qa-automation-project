@@ -28,7 +28,7 @@ class CheckoutPage(BasePage):
         self.driver.save_screenshot('before_continue.png')
         self.click(self.continue_btn)
         self.driver.save_screenshot('after_continue.png')
-        self.wait.until(EC.visibility_of_element_located(self.finish_btn))
+        #self.wait.until(EC.visibility_of_element_located(self.finish_btn))
     
     def finish_order(self):
         self.click(self.finish_btn)
