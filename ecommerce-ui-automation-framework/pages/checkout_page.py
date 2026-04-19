@@ -18,12 +18,16 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
         
     def fill_details(self, name, last_name, zip_code):
+        self.driver.save_screenshot('start_filling.png')
         self.type(self.first_name_locator, name)
+        self.driver.save_screenshot('name_fillied.png')
         self.type(self.last_name_locator, last_name)
+        self.driver.save_screenshot('last_name_fillied.png')
         self.type(self.postal_code_locator, zip_code)
-       
+        self.driver.save_screenshot('zip_code_fillied.png')
+        self.driver.save_screenshot('before_continue.png')
         self.click(self.continue_btn)
-
+        self.driver.save_screenshot('after_continue.png')
         self.wait.until(EC.visibility_of_element_located(self.finish_btn))
     
     def finish_order(self):
