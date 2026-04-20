@@ -26,7 +26,7 @@ class CheckoutPage(BasePage):
               self.type(self.postal_code_locator, zip_code)
               self.driver.save_screenshot('zip_code_fillied.png')
               
-              verfiy = self.driver.find_element(self.postal_code).get_attribute("value")
+              verfiy = self.driver.find_element(self.postal_code_locator).get_attribute("value")
               if verify:
                  break
         
