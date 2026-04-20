@@ -18,20 +18,18 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
         
     def fill_details(self, name, last_name, zip_code):
-        self.driver.save_screenshot('start_filling.png')
-        self.is_visible(self.first_name_locator)
-        self.type(self.first_name_locator, name)
-        self.driver.save_screenshot('name_fillied.png')
-        self.is_visible(self.last_name_locator)
-        self.type(self.last_name_locator, last_name)
-        self.driver.save_screenshot('last_name_fillied.png')
-        self.is_visible(self.postal_code_locator)
-        self.type(self.postal_code_locator, zip_code)
-        self.driver.save_screenshot('zip_code_fillied.png')
-        self.driver.save_screenshot('before_continue.png')
-        self.is_visible(self.continue_btn)
-        self.is_visible(self.continue_btn)
-        self.is_visible(self.continue_btn)
+        while True:
+              self.type(self.first_name_locator, name)
+              self.driver.save_screenshot('name_fillied.png')
+              self.type(self.last_name_locator, last_name)
+              self.driver.save_screenshot('last_name_fillied.png')
+              self.type(self.postal_code_locator, zip_code)
+              self.driver.save_screenshot('zip_code_fillied.png')
+              
+              verfiy = self.driver.find_element(self.postal_code).get_attribute("value")
+              if verify:
+                 break
+        
         self.click(self.continue_btn)
         self.driver.save_screenshot('after_continue.png')
         #self.wait.until(EC.visibility_of_element_located(self.finish_btn))
