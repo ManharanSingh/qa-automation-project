@@ -4,7 +4,7 @@ from pages.checkout_page import CheckoutPage
 from config.config import BASE_URL, USERNAME, PASSWORD
 from utils.logger import get_logger
 from config.config import FIRST_NAME, LAST_NAME, ZIP_CODE
-import time
+import pytest
 
 logger = get_logger(__name__)
 
