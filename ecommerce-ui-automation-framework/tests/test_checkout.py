@@ -8,9 +8,8 @@ import pytest
 
 logger = get_logger(__name__)
 
-@pytest.mark.flaky(reruns=2)
+
 def test_checkout(driver_setup):
-    assert fill_details()
     driver = driver_setup
 
     login_page = LoginPage(driver)
@@ -34,7 +33,7 @@ def test_checkout(driver_setup):
     
     logger.info("Entering checkout details: first_name=Manharan, last_name=Maravi, zip=501401")
     checkout.fill_details(FIRST_NAME, LAST_NAME, ZIP_CODE)
-   
+    
     logger.info("Finishing checkout process")
     checkout.finish_order()
     
