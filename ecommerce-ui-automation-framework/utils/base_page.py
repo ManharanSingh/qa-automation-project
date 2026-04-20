@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from slelenium.webdriver.common.keys import Keys
 
 
 
@@ -23,6 +23,7 @@ class BasePage:
     def type(self, locator, text):
         element = self.wait.until(EC.visibility_of_element_located(locator))
         element.send_keys(text)
+        element.send_keys(Keys.TAB)
 
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
