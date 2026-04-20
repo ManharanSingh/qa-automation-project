@@ -28,11 +28,9 @@ class CheckoutPage(BasePage):
             self.type(self.last_name_locator, last_name)
             self.type(self.postal_code_locator, zip_code)
 
-            self.wait.until(lambda d: d.find_element(*self.first_name_locator).get_attribute("value") and /
-                            d.find_element(*self.last_name_locator).get_attribute("value") and /
-                            d.find_element(*self.postal_code_locator).get_attribute("value"))
+            self.wait.until(lambda d: d.find_element(*self.first_name_locator).get_attribute("value") and d.find_element(*self.last_name_locator).get_attribute("value") and d.find_element(*self.postal_code_locator).get_attribute("value"))
             
-              self.click(self.continue_btn)
+            self.click(self.continue_btn)
        
        
     
