@@ -19,11 +19,17 @@ class CheckoutPage(BasePage):
 
     def fill_details(self, name, last_name, zip_code):
             
-            self.type(self.first_name_locator, name)
+            name_element = self.wait.until(EC.visibility_of_element_located(self.first_name_locator))
+            name_element.send_keys(name)
             self.driver.save_screenshot("name_filled.png")
-            self.type(self.last_name_locator, last_name)
-            self.type(self.postal_code_locator, zip_code)
-            self.driver.save_screenshot("zip_code_filled.png")                
+            
+            last_name_element = self.wait.until(EC.visibility_of_element_located(self.last_name_locator))
+            last_name_element.send_keys(last_name)
+            
+            zip_code_element = self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
+            zip_code_element.send_keys(zip_code)
+            self.driver.save_screenshot("zip_code_filled.png")   
+            
             self.click(self.continue_btn)
             self.driver.save_screenshot("test.png")
        
