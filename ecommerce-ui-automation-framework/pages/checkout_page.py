@@ -25,9 +25,10 @@ class CheckoutPage(BasePage):
             self.is_visible(self.postal_code_locator)
 
             self.type(self.first_name_locator, name)
+            self.driver.save_screenshot("name_filled.png")
             self.type(self.last_name_locator, last_name)
             self.type(self.postal_code_locator, zip_code)
-                            
+            self.driver.save_screenshot("zip_code_filled.png")                
             self.click(self.continue_btn)
             self.driver.save_screenshot("test.png")
        
