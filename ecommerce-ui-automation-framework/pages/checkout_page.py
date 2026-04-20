@@ -21,11 +21,14 @@ class CheckoutPage(BasePage):
         
     def fill_details(self, name, last_name, zip_code):
              
-              self.driver.find_element(self.first_name_locator, name)
+              NAME = self.driver.find_element(self.first_name_locator)
+              NAME.send_keys(name)
               
-              self.driver.find_element(self.last_name_locator, last_name)
+              Last_Name = self.driver.find_element(self.last_name_locator)
+              Last_Name.send_keys(last_name)
               
-              self.driver.find_element(self.postal_code_locator, zip_code)
+              Zip_Code = self.driver.find_element(self.postal_code_locator, zip_code)
+              Zip_Code.send_keys(zip_code)
              
               
               self.click(self.continue_btn)
