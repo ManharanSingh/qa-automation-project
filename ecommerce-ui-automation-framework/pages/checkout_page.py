@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from utils.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
-  
+import time
         
 class CheckoutPage(BasePage):
     def __init__(self, driver):
@@ -16,23 +16,23 @@ class CheckoutPage(BasePage):
 
     def click_checkout(self):
         self.click(self.checkout_btn)
+
+        self.wait.until(EC.url_contains("checkout-step-one"))
         
     def fill_details(self, name, last_name, zip_code):
-        while True:
+              self.is_visible(self.first_name_locator)
               self.type(self.first_name_locator, name)
-              self.driver.save_screenshot('name_fillied.png')
-              self.type(self.last_name_locator, last_name)
-              self.driver.save_screenshot('last_name_fillied.png')
-              self.type(self.postal_code_locator, zip_code)
-              self.driver.save_screenshot('zip_code_fillied.png')
+              self.driver.find_element(self.first_name_locator).get_attribute("value") != ""
               
-              verfiy = self.driver.find_element(self.postal_code_locator).get_attribute("value")
-              if verify:
-                 break
-        
-        self.click(self.continue_btn)
-        self.driver.save_screenshot('after_continue.png')
-        #self.wait.until(EC.visibility_of_element_located(self.finish_btn))
+              self.type(self.last_name_locator, last_name)
+              
+              self.type(self.postal_code_locator, zip_code)
+              self.driver.find_element(self.postal_code_locator).get_attribute("value") != ""
+
+              time.sleep(10)
+              self.click(self.continue_btn)
+       
+       
     
     def finish_order(self):
         self.click(self.finish_btn)
