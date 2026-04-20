@@ -29,7 +29,7 @@ class CheckoutPage(BasePage):
             self.type(self.postal_code_locator, zip_code)
 
             self.wait.until(lambda d:
-                            d.find_element(*self.continue_btn).is_enabled()
+                            d.find_element(*self.continue_btn).is_enabled())
                             
             self.click(self.continue_btn)
        
