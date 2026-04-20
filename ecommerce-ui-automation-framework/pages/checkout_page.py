@@ -20,17 +20,18 @@ class CheckoutPage(BasePage):
         self.wait.until(EC.url_contains("checkout-step-one"))
         
     def fill_details(self, name, last_name, zip_code):
-             
-              NAME = self.driver.find_element(By.ID, "first-name")
-              NAME.send_keys(name)
-              
-              Last_Name = self.driver.find_element(By.ID, "last-name")
-              Last_Name.send_keys(last_name)
-              
-              Zip_Code = self.driver.find_element(By.ID, "postal-code")
-              Zip_Code.send_keys(zip_code)
-             
-              
+            self.is_visible(self.first_name_locator)
+            self.is_visible(self.last_name_locator)
+            self.is_visible(self.postal_code_locator)
+
+            self.type(self.first_name_locator, name)
+            self.type(self.last_name_locator, last_name)
+            self.type(self.postal_code_locator, zip_code)
+
+            self.wait.until(lambda d: d.find_element(*self.first_name_locator).get_attribute("value") and /
+                            d.find_element(*self.last_name_locator).get_attribute("value") and /
+                            d.find_element(*self.postal_code_locator).get_attribute("value"))
+            
               self.click(self.continue_btn)
        
        
