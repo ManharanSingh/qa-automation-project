@@ -20,10 +20,7 @@ class CheckoutPage(BasePage):
         self.wait.until(EC.url_contains("checkout-step-one"))
         
     def fill_details(self, name, last_name, zip_code):
-            self.is_visible(self.first_name_locator)
-            self.is_visible(self.last_name_locator)
-            self.is_visible(self.postal_code_locator)
-
+            
             self.type(self.first_name_locator, name)
             self.driver.save_screenshot("name_filled.png")
             self.type(self.last_name_locator, last_name)
