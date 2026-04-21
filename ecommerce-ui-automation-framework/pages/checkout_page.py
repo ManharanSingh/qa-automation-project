@@ -21,6 +21,9 @@ class CheckoutPage(BasePage):
             
             name_element = self.wait.until(EC.visibility_of_element_located(self.first_name_locator))
             name_element.send_keys(name)
+            if not lambda d: self.driver.find_element(*self.first_name_locator).get_attribute("value") != name):
+                   self.type(self.first_name_locator, name)
+                    
             self.driver.save_screenshot("name_filled.png")
             
             last_name_element = self.wait.until(EC.visibility_of_element_located(self.last_name_locator))
@@ -28,6 +31,9 @@ class CheckoutPage(BasePage):
             
             zip_code_element = self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
             zip_code_element.send_keys(zip_code)
+            if not lambda d: self.driver.find_element(*self.postal_code_locator).get_attribute("value") != zip_code):
+                   self.type(self.postal_code_locator, name)
+                    
             self.driver.save_screenshot("zip_code_filled.png")   
             
             self.click(self.continue_btn)
