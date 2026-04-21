@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from utils.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
-import time
+
         
 class CheckoutPage(BasePage):
     def __init__(self, driver):
@@ -21,7 +21,7 @@ class CheckoutPage(BasePage):
             
             name_element = self.wait.until(EC.visibility_of_element_located(self.first_name_locator))
             name_element.send_keys(name)
-            if not lambda d: self.driver.find_element(*self.first_name_locator).get_attribute("value") != name):
+            if not lambda d: self.driver.find_element(*self.first_name_locator).get_attribute("value") != name:
                    self.type(self.first_name_locator, name)
                     
             self.driver.save_screenshot("name_filled.png")
@@ -31,7 +31,7 @@ class CheckoutPage(BasePage):
             
             zip_code_element = self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
             zip_code_element.send_keys(zip_code)
-            if not lambda d: self.driver.find_element(*self.postal_code_locator).get_attribute("value") != zip_code):
+            if not lambda d: self.driver.find_element(*self.postal_code_locator).get_attribute("value") != zip_code:
                    self.type(self.postal_code_locator, name)
                     
             self.driver.save_screenshot("zip_code_filled.png")   
