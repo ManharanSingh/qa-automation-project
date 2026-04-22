@@ -18,34 +18,13 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
 
     def fill_details(self, name, last_name, zip_code):
-            
-            name_element = self.wait.until(EC.visibility_of_element_located(self.first_name_locator))
-            name_element.send_keys(name)
-            if  self.driver.find_element(By.ID, "first-name").get_attribute("value") != name:
-                     name_element = self.wait.until(EC.visibility_of_element_located(self.first_name_locator))
-                     name_element.send_keys(name)
-                    
-            self.driver.save_screenshot("name_filled.png")
-            
-            last_name_element = self.wait.until(EC.visibility_of_element_located(self.last_name_locator))
-            last_name_element.send_keys(last_name)
-            if  self.driver.find_element(By.ID, "last-name").get_attribute("value") != last_name:
-                     last_name_element = self.wait.until(EC.visibility_of_element_located(self.last_name_locator))
-                     last_name_element.send_keys(last_name)
-                    
-                    
-            zip_code_element = self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
-            zip_code_element.send_keys(zip_code)
-            if  self.driver.find_element(By.ID, "postal-code").get_attribute("value") != zip_code:
-                    zip_code_element = self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
-                    zip_code_element.send_keys(zip_code)
-                    
-            self.driver.save_screenshot("zip_code_filled.png")   
-            
+            self.type(self.first_name_locator, name)
+            self.type(self.last_name_locator, last_name)
+            self.type(self.postal_code_locator, zip_code)
             self.click(self.continue_btn)
-            self.driver.save_screenshot("test.png")
-       
-       
+            
+            
+           
     
     def finish_order(self):
         self.click(self.finish_btn)
