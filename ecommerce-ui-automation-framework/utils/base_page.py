@@ -22,7 +22,7 @@ class BasePage:
         
     def type(self, locator, text):
         element = self.wait.until(EC.element_to_be_clickable(locator))
-        self.driver.execute_script(""" arguments[0].value = arguments[1]; arguments[0].dispatchEvent('input',{bubbles:true}));""", element, text)
+        self.driver.execute_script(""" arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('input',{bubbles:true}));""", element, text)
  
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
