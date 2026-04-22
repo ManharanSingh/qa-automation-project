@@ -21,7 +21,7 @@ class BasePage:
         
         
     def type(self, locator, text):
-        element = self.wait.until(EC.visibility_of_element_located(locator))
+        element = self.wait.until(EC.element_to_be_clickable(locator))
         element.click()
         self.wait.until(lambda d, el=element: d.execute_script("return document.activeElement === arguments[0];", el))
         element.clear()
