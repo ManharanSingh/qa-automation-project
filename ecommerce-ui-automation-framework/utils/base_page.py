@@ -22,7 +22,7 @@ class BasePage:
         
     def type(self, locator, text):
         element = self.wait.until(EC.visibility_of_element_located(locator))
-        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
         element.send_keys(text)
         
