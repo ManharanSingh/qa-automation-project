@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver import ActionChains
+import time
 
 
 
@@ -22,7 +22,12 @@ class BasePage:
         
     def type(self, locator, text):
         element = self.wait.until(EC.visibility_of_element_located(locator))
-        ActionChains(self.driver).click(element).send_keys(text)
+        element.click()
+        time.sleep(0.3)
+        element.clear()
+        for char in text:
+            element.send_keys(char)
+            time.sleep(0.05)
         
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
