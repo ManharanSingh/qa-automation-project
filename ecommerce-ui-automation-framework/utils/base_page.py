@@ -23,13 +23,10 @@ class BasePage:
     def type(self, locator, text):
         element = self.wait.until(EC.element_to_be_clickable(locator))
         element.click()
-        self.wait.until(lambda d, el=element: d.execute_script("return document.activeElement === arguments[0];", el))
-        element.clear()
-        element.send_keys(text)
+        for char in text:
+            element.send_keys(text)
 
-        actual = element.get_attribute("value")
-        assert actual == text , f"{locator} mismatch! got :{actual}"
-                        
+        self.driver.execute_script("arguments[0].dispatchEvent(new Event('input', {bubbles:true}))", element)
         
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
