@@ -21,7 +21,7 @@ class BasePage:
         
         
     def type(self, locator, text):
-        element = wait.until(EC.element_to_be_clickable(locator))
+        element = self.wait.until(EC.element_to_be_clickable(locator))
         element.click()
         element.clear()
         element.send_keys(text)
