@@ -23,11 +23,10 @@ class BasePage:
     def type(self, locator, text):
         element = self.wait.until(EC.visibility_of_element_located(locator))
         element.click()
-        time.sleep(0.3)
+        self.wait.until(lambda d: execute_script("return document.activeElement === arguments[0];", element))
         element.clear()
-        for char in text:
-            element.send_keys(char)
-            time.sleep(0.05)
+        element.send_keys(text)
+                        
         
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
