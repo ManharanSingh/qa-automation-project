@@ -26,6 +26,9 @@ class BasePage:
         self.wait.until(lambda d, el=element: d.execute_script("return document.activeElement === arguments[0];", el))
         element.clear()
         element.send_keys(text)
+
+        actual = element.get_attribute("value")
+        assert actual == value , f"{locator} mismatch! got :{actual}"
                         
         
     def get_text(self, locator):
