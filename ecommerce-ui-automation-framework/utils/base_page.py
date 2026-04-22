@@ -24,7 +24,7 @@ class BasePage:
         element = self.wait.until(EC.element_to_be_clickable(locator))
         self.driver.execute_script("arguments[0].focus();", element)
         element.click()
-        active = self.driver.switch_to_active_element
+        active = self.driver.switch_to.active_element
         active.send_keys(text)
  
     def get_text(self, locator):
