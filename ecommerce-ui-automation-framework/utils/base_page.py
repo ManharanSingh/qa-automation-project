@@ -22,9 +22,13 @@ class BasePage:
         
     def type(self, locator, text):
         element = self.wait.until(EC.element_to_be_clickable(locator))
-        element.clear()
+        self.driver.execute_script("arguments[0].focus();", element)
         element.click()
-        element.send_keys(text)
+        element.clear()
+
+        for char in text:
+            element.send_keys(char)
+            time.sleep(0.2)
  
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
