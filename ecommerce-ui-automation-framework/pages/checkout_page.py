@@ -21,7 +21,7 @@ class CheckoutPage(BasePage):
             
             name_element = self.wait.until(EC.visibility_of_element_located(self.first_name_locator))
             name_element.send_keys(name)
-            if  self.driver.find_element(self.first_name_locator).get_attribute("value") != name:
+            if  self.driver.find_element(By.ID, "first-name").get_attribute("value") != name:
                      name_element = self.wait.until(EC.visibility_of_element_located(self.first_name_locator))
                      name_element.send_keys(name)
                     
@@ -29,14 +29,14 @@ class CheckoutPage(BasePage):
             
             last_name_element = self.wait.until(EC.visibility_of_element_located(self.last_name_locator))
             last_name_element.send_keys(last_name)
-            if  self.driver.find_element(self.last_name_locator).get_attribute("value") != last_name:
+            if  self.driver.find_element(By.ID, "last-name").get_attribute("value") != last_name:
                      last_name_element = self.wait.until(EC.visibility_of_element_located(self.last_name_locator))
                      last_name_element.send_keys(last_name)
                     
                     
             zip_code_element = self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
             zip_code_element.send_keys(zip_code)
-            if  self.driver.find_element(self.zip_code_locator).get_attribute("value") != zip_code:
+            if  self.driver.find_element(By.ID, "postal-code").get_attribute("value") != zip_code:
                     zip_code_element = self.wait.until(EC.visibility_of_element_located(self.postal_code_locator))
                     zip_code_element.send_keys(zip_code)
                     
