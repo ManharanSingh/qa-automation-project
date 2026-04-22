@@ -28,7 +28,7 @@ class BasePage:
         element.send_keys(text)
 
         actual = element.get_attribute("value")
-        assert actual == value , f"{locator} mismatch! got :{actual}"
+        assert actual == text , f"{locator} mismatch! got :{actual}"
                         
         
     def get_text(self, locator):
