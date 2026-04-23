@@ -24,10 +24,12 @@ class BasePage:
        self.wait.until(lambda d: element.is_enabled())
        element.clear()
        element.send_keys(text)
-       active = self.driver.switch_to.active_element
-
-       if not active:
-          raise ValueError("focus lost")
+       verify = element.get_attribute("value")
+       time.sleep(1)
+       sec_verify = element.get_attribute("value")
+       
+       if verify != sec_verify:
+          raise ValueError("Js is clearing it ")
            
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
