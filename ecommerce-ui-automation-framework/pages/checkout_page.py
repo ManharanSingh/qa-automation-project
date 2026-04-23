@@ -19,19 +19,12 @@ class CheckoutPage(BasePage):
 
     def fill_details(self, name, last_name, zip_code):
             self.driver.get("https://www.saucedemo.com/checkout-step-one.html")
-            old_element = self.driver.find_element(*self.first_name_locator)
-            time.sleep(2)
-
-            new_element = self.driver.find_element(*self.first_name_locator)
-
-            print(old_element == new_element)
-
-            #self.driver.save_screenshot("start.png")
-            #self.type(self.first_name_locator, name)
-            #self.type(self.last_name_locator, last_name)
-           # self.type(self.postal_code_locator, zip_code)
-            #self.click(self.continue_btn)
-            #self.driver.save_screenshot("test.png")
+            self.driver.save_screenshot("start.png")
+            self.type(self.first_name_locator, name)
+            self.type(self.last_name_locator, last_name)
+            self.type(self.postal_code_locator, zip_code)
+            self.click(self.continue_btn)
+            self.driver.save_screenshot("test.png")
             
             
            
