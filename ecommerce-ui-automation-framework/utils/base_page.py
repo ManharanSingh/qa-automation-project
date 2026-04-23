@@ -27,8 +27,6 @@ class BasePage:
         element.clear()
         for char in text:
             element.send_keys(text)
-
-        self.wait.until(lambda d: element.get_attribute("value") == text)
         
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
