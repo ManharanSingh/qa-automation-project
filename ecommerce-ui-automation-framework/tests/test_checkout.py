@@ -32,7 +32,7 @@ def test_checkout(driver_setup):
     checkout.click_checkout()
     
     logger.info("Entering checkout details: first_name=Manharan, last_name=Maravi, zip=501401")
-    checkout.fill_details(FIRST_NAME, LAST_NAME, ZIP_CODE)
+    checkout.fill_details("manharan", "maravi", "495119")
     
    # logger.info("Finishing checkout process")
    # checkout.finish_order()
