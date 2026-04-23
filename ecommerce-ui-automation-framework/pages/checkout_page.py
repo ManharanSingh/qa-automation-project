@@ -18,6 +18,7 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
 
     def fill_details(self, name, last_name, zip_code):
+            self.driver.get("https://www.saucedemo.com/checkout-step-one.html")
             self.driver.save_screenshot("start.png")
             self.type(self.first_name_locator, name)
             self.type(self.last_name_locator, last_name)
