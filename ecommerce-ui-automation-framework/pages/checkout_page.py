@@ -21,6 +21,7 @@ class CheckoutPage(BasePage):
 
             
             self.type(self.first_name_locator, name)
+            self.type(self.first_name_locator, name)
             self.type(self.last_name_locator, last_name)
             self.driver.save_screenshot("start.png")
             self.type(self.postal_code_locator, zip_code)
