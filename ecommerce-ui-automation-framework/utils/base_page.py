@@ -21,11 +21,12 @@ class BasePage:
         
         
     def type(self, locator, text):
-        print("Before:", element.get_attribute("value"))
+        
         element = self.wait.until(EC.element_to_be_clickable(locator))
         element.click()
         element = self.wait.until(EC.presence_of_element_located(locator))
         element.clear()
+        print("Before:", element.get_attribute("value"))
         element.send_keys(text)
         
         print("After:", element.get_attribute("value"))
