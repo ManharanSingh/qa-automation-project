@@ -22,7 +22,7 @@ class BasePage:
     def type(self, locator, text):
    
         for attempt in range(3):
-           element = self.wait.wait_for_input_ready(locator)
+           element = self.wait.until(EC.element_to_be_clickable(locator))
     
            element.clear()
            element.send_keys(text)
