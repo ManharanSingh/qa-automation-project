@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from utils.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
-
+import time
         
 class CheckoutPage(BasePage):
     def __init__(self, driver):
@@ -22,7 +22,7 @@ class CheckoutPage(BasePage):
             old_element = self.driver.find_element(*self.first_name_locator)
             time.sleep(2)
 
-            new_element = self.driver.find_element(*locator)
+            new_element = self.driver.find_element(*self.first_name_locator)
 
             print(old_element == new_element)
 
