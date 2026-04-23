@@ -20,18 +20,18 @@ class BasePage:
         
         
     def type(self, locator, text):
-        
-        element = self.wait.until(EC.element_to_be_clickable(locator))
-        element.click()
-        element = self.wait.until(EC.presence_of_element_located(locator))
-        element.clear()
-        print("Before:", element.get_attribute("value"))
-        element.send_keys(text)
-        
-        print("After:", element.get_attribute("value"))
-        time.sleep(2)
-        print("After 2 sec:", element.get_attribute("value"))
-        
+   
+        for attempt in range(3):
+           element = wait_for_input_ready(locator)
+    
+           element.clear()
+           element.send_keys(text)
+    
+           if element.get_attribute("value") == text:
+              break
+           else:
+              raise Exception("Input not stable after retries")
+              
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
     
