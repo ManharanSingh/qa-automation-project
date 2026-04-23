@@ -20,16 +20,18 @@ class BasePage:
         
         
     def type(self, locator, text):
+       self.driver.save_screenshot("start_filling.png")
        element = self.wait.until(EC.visibility_of_element_located(locator))
+       old_element = element
        self.wait.until(lambda d: element.is_enabled())
        element.clear()
        element.send_keys(text)
-       verify = element.get_attribute("value")
-       time.sleep(1)
-       sec_verify = element.get_attribute("value")
+       self.driver.save_screenshot("after_filling.png")
+
+       new_element = self.driver.find_element(*locator)
        
-       if verify != sec_verify:
-          raise ValueError("Js is clearing it ")
+       if old_element != new_element:
+          raise ValueError("element replaced ")
            
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
