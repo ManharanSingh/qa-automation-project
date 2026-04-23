@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
+
 
    
 class BasePage:
@@ -23,9 +23,10 @@ class BasePage:
    
         for attempt in range(3):
            element = self.wait.until(EC.element_to_be_clickable(locator))
-    
+           self.wait.until(lambda d: element.is_enabled())
            element.clear()
            element.send_keys(text)
+           
     
            if element.get_attribute("value") == text:
               break
