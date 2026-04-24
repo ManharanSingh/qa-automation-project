@@ -25,7 +25,7 @@ jobs:
     - name: Run tests
       working-directory: ecommerce-ui-automation-framework
       run: |
-        python -m pytest tests/test_checkout.py --html=reports/report.html
+        python -m pytest tests --html=reports/report.html
         
     - name: Upload screenshots
       uses: actions/upload-artifact@v4
