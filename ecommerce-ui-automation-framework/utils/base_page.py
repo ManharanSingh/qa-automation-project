@@ -32,9 +32,10 @@ class BasePage:
        if active != element:
           raise ValueError("focus issue")
        logger.info(f"before : {element}")
-       for char in text:
-          element.send_keys(char)
-          time.sleep(0.1)
+       element.send_keys(text)
+       element = self.driver.find_element(*locator)
+       logger.info(f"new element:{element.get.attribute('value')}")
+         
           
        logger.info(f"immediate : {element.get_attribute('value')}")
        time.sleep(0.5)
