@@ -27,7 +27,7 @@ class CheckoutPage(BasePage):
             self.type(self.last_name_locator, last_name)
             self.driver.save_screenshot("mid2.png")
             self.type(self.postal_code_locator, zip_code)
-            logger.info("First Name value:", element.get_attribute("value"))
+            logger.info("First Name value:", element.get_attribute('value'))
             logger.info("Active element:", self.driver.switch_to.active_element)
             raise ValueError("stopped manually")
             self.driver.save_screenshot("before_continue.png")
