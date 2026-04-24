@@ -37,7 +37,6 @@ class BasePage:
           time.sleep(0.1)
           
        logger.info(f"immediate : {element.get_attribute('value')}")
-       import time
        time.sleep(0.5)
        logger.info(f"After 0.5s:{element.get_attribute('value')}")
        new_element = self.driver.find_element(*locator)
