@@ -29,10 +29,11 @@ class BasePage:
        element = self.wait.until(EC.element_to_be_clickable(locator))
        elements = self.driver.find_elements(*locator)
        logger.info(f"element count:{len(elements)}")     
-       raise ValueError("stoped manually")      
        element.click()
        self.driver.execute_script("arguments[0].focus();", element)    
-       self.driver.execute_script("""arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('input', { bubbles: true }));arguments[0].dispatchEvent(new Event('change', { bubbles: true }));""", element, text)      
+       self.driver.execute_script("""arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('input', { bubbles: true }));arguments[0].dispatchEvent(new Event('change', { bubbles: true }));""", element, text) 
+       logger.info(f"first name value before sumbit:{element.get_attribute('value')}")
+       raise ValueError("stoped manually")            
        active = self.driver.switch_to.active_element
        if active != element:
           raise ValueError("focus issue")
