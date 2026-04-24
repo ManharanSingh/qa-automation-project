@@ -34,6 +34,7 @@ class BasePage:
        logger.info(f"before : {element}")
        for char in text:
           element.send_keys(char)
+          time.sleep(0.1)
           
        logger.info(f"immediate : {element.get_attribute('value')}")
        import time
