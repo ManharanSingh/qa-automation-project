@@ -1,7 +1,9 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from utils.logger import get_logger
 
+logger = get_logger(__name__)
    
 class BasePage:
 
@@ -25,8 +27,11 @@ class BasePage:
        active = self.driver.switch_to.active_element
        if active != element:
           raise ValueError("focus issue")
-
+       logger.info(f"before : {element}")
        element.send_keys(text)
+       new_element = self.driver.find_element(*locator)
+       logger.info(f"after : {new_element}")
+       logger.info(f"same element? :{element == new_element}")
        value_after = element.get_attribute("value")
        if value_after != text:
           raise ValueError(f"value after typing:{value_after}")
