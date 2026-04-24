@@ -34,7 +34,7 @@ class BasePage:
        logger.info(f"before : {element}")
        logger.info(f"Tag:{element.tag_name}")
        logger.info(f"Type:{element.get_attribute('type')}")
-       element.send_keys(text)
+       self.driver.execute_script("arguments[0].value = arguments[1];", element, text)
        element = self.driver.find_element(*locator)
        logger.info(f"new element:{element.get_attribute('value')}")
          
