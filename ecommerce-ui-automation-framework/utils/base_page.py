@@ -34,6 +34,12 @@ class BasePage:
        logger.info(f"before : {element}")
        logger.info(f"Tag:{element.tag_name}")
        logger.info(f"Type:{element.get_attribute('type')}")
+       logger.info(f"verify 1: {element.is_displayed()}")
+       logger.info(f"verify 2: {element.is_enabled()}")
+
+       rect = element.rect
+       logger.info(f"verify 3:{rect}")      
+       raise ValueError("stopped manually")            
        self.driver.execute_script("arguments[0].value = arguments[1];", element, text)
        element = self.driver.find_element(*locator)
        logger.info(f"new element:{element.get_attribute('value')}")
