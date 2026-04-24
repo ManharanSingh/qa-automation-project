@@ -19,7 +19,11 @@ class BasePage:
        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
        self.driver.execute_script("arguments[0].click();", element)
         
-        
+    def login_type(locator, text):
+       element =  self.wait.until(EC.visibility_of_element_located(locator))
+       element.clear()
+       element.send_keys(text)
+       
     def type(self, locator, text):
        element = self.wait.until(EC.element_to_be_clickable(locator))
        element.click()
