@@ -46,7 +46,7 @@ class BasePage:
        if value_after != text:
           raise ValueError(f"value after typing:{value_after}")
 
-       import time
+       
        time.sleep(1)
 
        value_later = element.get_attribute("value")
