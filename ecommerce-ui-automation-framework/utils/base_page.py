@@ -32,7 +32,9 @@ class BasePage:
        if active != element:
           raise ValueError("focus issue")
        logger.info(f"before : {element}")
-       element.send_keys(text)
+       for char in text:
+          element.send_keys(char)
+          
        logger.info(f"immediate : {element.get_attribute('value')}")
        import time
        time.sleep(0.5)
