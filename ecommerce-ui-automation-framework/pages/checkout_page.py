@@ -30,6 +30,7 @@ class CheckoutPage(BasePage):
             logger.info(f"First Name value:{element.get_attribute('value')}")
             logger.info(f"Active element:{self.driver.switch_to.active_element}")
             self.driver.save_screenshot("before_continue.png")
+            self.wait.until(lambda d: d.switch_to.active_element.tag_name != "input")
             self.click(self.continue_btn)
             self.driver.save_screenshot("test.png")
             
