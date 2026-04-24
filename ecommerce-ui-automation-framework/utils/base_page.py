@@ -21,6 +21,7 @@ class BasePage:
     def type(self, locator, text):
        element = self.wait.until(EC.element_to_be_clickable(locator))
        element.click()
+       self.driver.execute_script("arguments[0].focus();", element)
        active = self.driver.switch_to.active_element
        if active != element:
           raise ValueError("focus issue")
