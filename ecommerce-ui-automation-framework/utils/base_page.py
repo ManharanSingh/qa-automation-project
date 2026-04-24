@@ -29,10 +29,10 @@ class BasePage:
           raise ValueError("focus issue")
        logger.info(f"before : {element}")
        element.send_keys(text)
-       logger.info(f"immediate : {element.get_attribute("value")}")
+       logger.info(f"immediate : {element.get_attribute('value')}")
        import time
        time.sleep(0.5)
-       logger.info(f"After 0.5s:{element.get_attribute("value")}")
+       logger.info(f"After 0.5s:{element.get_attribute('value')}")
        new_element = self.driver.find_element(*locator)
        logger.info(f"after : {new_element}")
        logger.info(f"same element? :{element == new_element}")
