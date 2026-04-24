@@ -2,6 +2,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.common.keys import Keys
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
