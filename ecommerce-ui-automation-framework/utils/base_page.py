@@ -32,6 +32,8 @@ class BasePage:
        if active != element:
           raise ValueError("focus issue")
        logger.info(f"before : {element}")
+       logger.info(f"Tag:{element.tag_name}")
+       logger.info(f"Type:{element.get_attribute('type')}")
        element.send_keys(text)
        element = self.driver.find_element(*locator)
        logger.info(f"new element:{element.get_attribute('value')}")
