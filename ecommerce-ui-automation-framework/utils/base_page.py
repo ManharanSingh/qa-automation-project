@@ -46,7 +46,7 @@ class BasePage:
        input.dispatchEvent(event);
        """, element, text)
          
-       element.send_keys(Keys.TAB)
+       
        active = self.driver.switch_to.active_element
        if active != element:
           raise ValueError("focus issue")
