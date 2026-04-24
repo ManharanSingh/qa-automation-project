@@ -32,7 +32,20 @@ class BasePage:
        logger.info(f"element count:{len(elements)}")     
        element.click()
        self.driver.execute_script("arguments[0].focus();", element)    
-       self.driver.execute_script("""arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('input', { bubbles: true }));arguments[0].dispatchEvent(new Event('change', { bubbles: true }));""", element, text) 
+       self.driver.execute_script(""" 
+       const input = arguments[0]; 
+       const val = arguments[1]; 
+       const lastValue = input.value; 
+       input.value = val; 
+       const event = newEvent('input',{bubbles:true});
+       const tracker = input._valueTracker;
+
+       if (tracker){
+          tracker.setValue(lastValue);
+          }
+       input.dispatchEvent(event);
+       """, element, text)
+         
        element.send_keys(Keys.TAB)
        active = self.driver.switch_to.active_element
        if active != element:
