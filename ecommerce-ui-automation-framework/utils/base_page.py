@@ -37,7 +37,7 @@ class BasePage:
        const val = arguments[1]; 
        const lastValue = input.value; 
        input.value = val; 
-       const event = newEvent('input',{bubbles:true});
+       const event = new Event('input',{bubbles:true});
        const tracker = input._valueTracker;
 
        if (tracker){
