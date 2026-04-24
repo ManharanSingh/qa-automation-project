@@ -28,6 +28,7 @@ class BasePage:
        element = self.wait.until(EC.element_to_be_clickable(locator))
        element.click()
        self.driver.execute_script("arguments[0].focus();", element)
+       self.wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, "loading")))      
        self.driver.execute_script("""arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('input', { bubbles: true }));arguments[0].dispatchEvent(new Event('change', { bubbles: true }));""", element, text)      
        active = self.driver.switch_to.active_element
        if active != element:
