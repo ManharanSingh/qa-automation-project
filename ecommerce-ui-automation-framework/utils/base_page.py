@@ -39,8 +39,7 @@ class BasePage:
        logger.info(f"verify 2: {element.is_enabled()}")
 
        rect = element.rect
-       logger.info(f"verify 3:{rect}")      
-       raise ValueError("stopped manually")            
+       logger.info(f"verify 3:{rect}")                 
        self.driver.execute_script("arguments[0].value = arguments[1];", element, text)
        element = self.driver.find_element(*locator)
        logger.info(f"new element:{element.get_attribute('value')}")
