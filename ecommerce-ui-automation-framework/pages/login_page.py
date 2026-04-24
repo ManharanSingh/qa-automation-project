@@ -19,11 +19,11 @@ class LoginPage(BasePage):
         self.click_login()
      
     def enter_username(self, username):
-        self.type(self.username_locator, username)
+        self.login_type(self.username_locator, username)
         
 
     def enter_password(self, password):
-        self.type(self.password_locator, password)
+        self.login_type(self.password_locator, password)
         
     def click_login(self):
         self.click(self.login_btn_locator)
