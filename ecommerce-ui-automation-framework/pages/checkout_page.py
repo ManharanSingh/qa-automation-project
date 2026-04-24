@@ -19,7 +19,6 @@ class CheckoutPage(BasePage):
 
     def fill_details(self, name, last_name, zip_code):
 
-            time.sleep(20)
             self.type(self.first_name_locator, name)
             self.type(self.last_name_locator, last_name)
             self.driver.save_screenshot("start.png")
