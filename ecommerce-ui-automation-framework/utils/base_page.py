@@ -3,12 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
-
-             
-
-         
 class BasePage:
-
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 20)
@@ -26,7 +21,7 @@ class BasePage:
        element.clear()
        element.send_keys(text)
        
-    def type(self, locator, text):
+    def checkout_type(self, locator, text):
        element = self.wait.until(EC.element_to_be_clickable(locator))
        element.click()
        self.driver.execute_script("arguments[0].focus();", element)    
