@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 from utils.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
-import time
-from utils.logger import get_logger
 
-logger = get_logger(__name__)
+
+
+
         
 class CheckoutPage(BasePage):
     def __init__(self, driver):
@@ -21,20 +21,11 @@ class CheckoutPage(BasePage):
         self.click(self.checkout_btn)
 
     def fill_details(self, name, last_name, zip_code):
-
-            element = self.type(self.first_name_locator, name)
-            self.driver.save_screenshot("mid1.png")
+            self.type(self.first_name_locator, name)
             self.type(self.last_name_locator, last_name)
-            self.driver.save_screenshot("mid2.png")
             self.type(self.postal_code_locator, zip_code)
-            logger.info(f"First Name value:{element.get_attribute('value')}")
-            logger.info(f"Active element:{self.driver.switch_to.active_element}")
-            self.driver.save_screenshot("before_continue.png")
+
             self.click(self.continue_btn)
-            self.driver.save_screenshot("test.png")
-            
-            
-           
     
     def finish_order(self):
         self.click(self.finish_btn)
