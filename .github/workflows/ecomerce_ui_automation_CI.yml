@@ -23,7 +23,7 @@ jobs:
         pip install -r Ecommerce_UI_Automation_Framework/requirements.txt
 
     - name: Run tests
-      working-directory: ecommerce-ui-automation-framework
+      working-directory: Ecommerce-UI-Automation-Framework
       run: |
         python -m pytest tests --html=reports/report.html
         
