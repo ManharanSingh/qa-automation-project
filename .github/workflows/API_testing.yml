@@ -1,0 +1,30 @@
+name: API Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r API_Automation_Framework_(E-commerce)/requirements.txt
+
+      - name: Run tests
+        working-directory: API_Automation_Framework_(E-commerce)
+        run: |
+          python -m pytest --alluredir=allure-results
