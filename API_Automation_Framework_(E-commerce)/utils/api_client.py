@@ -18,6 +18,11 @@ class APIClient:
         self.session.headers.update(headers or {})
         self.session.headers.setdefault("Content-Type", "application/json")
 
+        # Fix for Cloudflare blocking (CI environments)
+        self.session.headers.setdefault(
+            "User-Agent",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+        )
         retries = Retry(
             total=3,
             backoff_factor=0.5,
