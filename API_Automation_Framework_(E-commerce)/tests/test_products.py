@@ -45,6 +45,9 @@ def test_get_all_products(product_service):
 
     data = safe_json(response)
 
+    if isinstance(data, dict) and "products" in data:
+        data = data["products"]
+
     assert isinstance(data, list)
     assert len(data) > 0
 
