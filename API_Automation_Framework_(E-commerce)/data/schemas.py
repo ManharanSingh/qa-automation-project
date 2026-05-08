@@ -50,7 +50,6 @@ product_schema = {
     "category",
     "image",
     "rating"
-  ],
-  "additionalProperties": False
+  ]
 }
 
