@@ -33,7 +33,7 @@ def test_get_product_parametrized(product_service, product_id, expected_valid):
           else:
               assert response.status_code == 404
 
-        assert_response_time(response)
+          assert_response_time(response)
 
     response_data = safe_json(response)
 
