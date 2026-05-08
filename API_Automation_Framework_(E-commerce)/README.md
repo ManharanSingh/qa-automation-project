@@ -1,37 +1,49 @@
 # 🚀 API Automation Framework (E-commerce)
 
-A production-style API automation framework built using Python and Pytest, designed to demonstrate real-world QA Automation practices including structured test design, schema validation, data-driven testing, and reporting.
+A scalable and production-style API automation framework built using Python and Pytest, designed to demonstrate real-world QA Automation practices including framework architecture, schema validation, data-driven testing, environment management, CI integration, and reporting.
 
 ---
 
-## 📌 Overview
+# 📌 Overview
 
-This project tests an e-commerce API (Fake Store API) using a scalable and maintainable automation framework.
+This project automates testing for e-commerce product APIs using a layered automation framework following industry-style design patterns.
 
-It focuses on:
+The framework supports:
 
-* Clean architecture (Client → Service → Tests)
-* Robust validation (JSON schema + business rules)
-* Data-driven testing
-* Performance checks
-* Professional reporting with Allure
-
----
-
-## 🧱 Tech Stack
-
-* Python
-* Pytest
-* Requests
-* jsonschema
-* Allure Reports
+- Multiple environments (Local + CI)
+- Environment-based API switching
+- Schema validation
+- Data-driven testing
+- API performance validation
+- Centralized request handling
+- CI/CD execution using GitHub Actions
+- Professional reporting with Allure
 
 ---
 
-## 📂 Project Structure
+# 🧱 Tech Stack
 
-```
+- Python
+- Pytest
+- Requests
+- jsonschema
+- Allure Reports
+- GitHub Actions
+- python-dotenv
+
+---
+
+# 📂 Project Structure
+
+```text
 api-framework/
+│
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+│
+├── config/
+│   └── config.py
 │
 ├── tests/
 │   └── test_products.py
@@ -42,83 +54,171 @@ api-framework/
 ├── utils/
 │   ├── api_client.py
 │   ├── helpers.py
+│   └── logger.py
 │
 ├── data/
 │   ├── schemas.py
 │   └── test_data.json
 │
+├── .env
+├── .gitignore
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## ⚙️ Features
+# ⚙️ Framework Architecture
 
-### ✅ API Client
+```text
+Tests
+   ↓
+Service Layer
+   ↓
+API Client
+   ↓
+External API
+```
 
-* Centralized request handling
-* Retry mechanism with backoff
-* Configurable timeout
-* Request/response logging
-* Status validation support
-
----
-
-### ✅ Service Layer
-
-* Encapsulates API endpoints
-* Improves readability and maintainability
-* Supports both validated and unvalidated calls
+The framework follows separation of concerns to improve maintainability, scalability, and readability.
 
 ---
 
-### ✅ Test Design
+# 🌍 Environment Management
 
-* Parametrized tests (multiple scenarios)
-* Data-driven testing (external JSON)
-* Clean separation of test logic and data
+This framework supports multiple environments using `.env` configuration and a centralized config class.
 
----
+| Environment | API |
+|---|---|
+| Local | FakeStoreAPI |
+| CI | DummyJSON |
+| Staging | Configurable |
+| Production | Configurable |
 
-### ✅ Schema Validation
-
-* JSON schema validation using `jsonschema`
-* Enforces:
-
-  * Data types
-  * Required fields
-  * Business rules (e.g., price > 0)
-  * No unexpected fields
+Environment switching is handled dynamically without changing test code.
 
 ---
 
-### ✅ Performance Validation
+# 🔧 Configuration Management
 
-* Response time assertions included in tests
+Environment variables are managed using `python-dotenv`.
 
----
+Example `.env`:
 
-### ✅ Allure Reporting
+```env
+ENV=local
 
-* Structured test reports
-* Step-level visibility
-* Severity tagging
-
----
-
-## 🧪 Sample Test Scenario
-
-* Validate product API with multiple IDs
-* Handle valid and invalid cases
-* Verify schema + business rules
-* Measure response performance
+LOCAL_BASE_URL=https://fakestoreapi.com
+CI_BASE_URL=https://dummyjson.com
+STAGING_BASE_URL=https://dummyjson.com
+PROD_BASE_URL=https://fakestoreapi.com
+```
 
 ---
 
-## ▶️ How to Run
+# ✅ Features
 
-### 1. Install dependencies
+## 🔹 API Client
+
+Centralized reusable HTTP client with:
+
+- Retry mechanism with exponential backoff
+- Configurable timeout handling
+- Request/response logging
+- Status code validation
+- Query parameter support
+- Session-based request management
+
+---
+
+## 🔹 Service Layer
+
+Encapsulates endpoint logic for cleaner and maintainable test design.
+
+Example:
+- `get_all_products()`
+- `get_product()`
+- `get_product_unvalidated()`
+
+---
+
+## 🔹 Data-Driven Testing
+
+Test scenarios are externalized using JSON test data.
+
+Supports:
+- Multiple product IDs
+- Positive scenarios
+- Negative scenarios
+
+---
+
+## 🔹 Schema Validation
+
+JSON schema validation implemented using `jsonschema`.
+
+Validates:
+- Required fields
+- Data types
+- Business rules
+- Flexible response structures across environments
+
+---
+
+## 🔹 Performance Validation
+
+Response time assertions included in tests.
+
+Example:
+- API response must complete within threshold time
+
+---
+
+## 🔹 Allure Reporting
+
+Integrated Allure reporting for:
+
+- Step-level reporting
+- Severity tagging
+- Better debugging visibility
+- Professional test reports
+
+---
+
+## 🔹 CI/CD Integration
+
+Integrated with GitHub Actions.
+
+Features:
+- Automated test execution on push
+- CI-specific environment configuration
+- Stable CI execution using environment switching
+
+---
+
+# 🧪 Sample Test Scenarios
+
+## Product API Validation
+
+- Validate product schema
+- Validate product data types
+- Validate business rules
+- Validate invalid product behavior
+- Validate API performance
+
+---
+
+# ▶️ How to Run
+
+## 1. Clone Repository
+
+```bash
+git clone <your-repo-url>
+```
+
+---
+
+## 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -126,7 +226,13 @@ pip install -r requirements.txt
 
 ---
 
-### 2. Run tests
+## 3. Configure Environment
+
+Update `.env` if needed.
+
+---
+
+## 4. Run Tests
 
 ```bash
 pytest
@@ -134,7 +240,7 @@ pytest
 
 ---
 
-### 3. Generate Allure results
+## 5. Generate Allure Results
 
 ```bash
 pytest --alluredir=allure-results
@@ -142,7 +248,7 @@ pytest --alluredir=allure-results
 
 ---
 
-### 4. View report
+## 6. View Allure Report
 
 ```bash
 allure serve allure-results
@@ -150,41 +256,65 @@ allure serve allure-results
 
 ---
 
-## 📊 Example Validations
+# 🚀 Running in CI
 
-* Product schema validation
-* Price must be greater than 0
-* Response must match expected structure
-* Invalid product returns empty response
+GitHub Actions automatically runs tests on:
+- Push
+- Pull Request
 
----
-
-## 💡 Key Highlights
-
-* Designed with real-world QA automation practices
-* Focus on maintainability and scalability
-* Demonstrates strong API testing fundamentals
+CI environment automatically switches to DummyJSON API for stable execution.
 
 ---
 
-## 📌 Future Improvements
+# 📊 Example Validations
 
-* CI/CD integration (GitHub Actions)
-* Docker support
-* Extended API coverage (Users, Orders)
+- Product schema validation
+- Product ID validation
+- Price validation
+- Response structure validation
+- Negative API validation
+- Response time validation
 
 ---
 
-## 👨‍💻 Author
+# 💡 Key Highlights
 
-[Your Name]
+- Production-style framework structure
+- Multiple environment support
+- CI/CD integrated
+- Schema-based API validation
+- Data-driven testing
+- Reusable API client design
+- Scalable architecture
+
+---
+
+# 📌 Future Improvements
+
+- Docker support
+- API mocking support
+- Authentication workflows
+- Parallel test execution
+- HTML reporting
+- API contract testing
+- Request/response models
+
+---
+
+# 👨‍💻 Author
+
+Manharan Maravi  
 Aspiring QA Automation Engineer
 
 ---
 
-## ⭐ Final Note
+# ⭐ Final Note
 
-This project focuses on **quality over quantity** — showcasing a single module implemented with strong design, validation, and testing practices aligned with industry expectations.
+This project focuses on building a maintainable and scalable API automation framework aligned with real-world QA Automation practices rather than creating large quantities of basic test cases.
 
-
-
+The goal is to demonstrate:
+- Strong framework design
+- Clean test architecture
+- Real-world testing practices
+- CI/CD awareness
+- Maintainable automation code
