@@ -34,7 +34,7 @@
             "count": { "type": "integer" }
           },
           "required": ["rate", "count"],
-          "additionalProperties": false
+          "additionalProperties": False
         },
         {
           "type": "number"
@@ -51,6 +51,6 @@
     "image",
     "rating"
   ],
-  "additionalProperties": false
+  "additionalProperties": False
 }
 
