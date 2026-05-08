@@ -41,8 +41,9 @@ def test_get_product_parametrized(product_service, product_id, expected_valid):
         validate(instance=response_data, schema=product_schema, format_checker=FormatChecker())
         assert response_data["id"] == product_id
     else:
-        assert response_data == {}, f"Expected empty response, got {response_data}"
-
+        assert "message" in response_data
+        assert "not found" in response_data["message"].lower()
+        
 def test_get_all_products(product_service):
     with allure.step("Send request"):
         response = product_service.get_all_products()
