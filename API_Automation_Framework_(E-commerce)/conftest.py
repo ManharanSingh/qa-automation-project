@@ -3,7 +3,7 @@ from utils.api_client import APIClient
 from services.product_service import ProductService
 import os
 
-ENV = os.getenv("ENv", "local")
+ENV = os.getenv("ENV", "local")
 
 if ENV == 'ci':
     BASE_URL = "https://dummyjson.com"
