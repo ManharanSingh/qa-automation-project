@@ -1,8 +1,14 @@
 import pytest
 from utils.api_client import APIClient
 from services.product_service import ProductService
+import os
 
-BASE_URL = "https://fakestoreapi.com"
+ENV = os.getenv("ENv", "local")
+
+if ENV == 'ci':
+    BASE_URL = "https://dummyjson.com"
+else:
+    BASE_URL = "https://fakestoreapi.com"
 
 @pytest.fixture(scope="session")
 def api_client():
