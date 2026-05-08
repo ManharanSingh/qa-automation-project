@@ -28,7 +28,11 @@ def test_get_product_parametrized(product_service, product_id, expected_valid):
             response = product_service.get_product_unvalidated(product_id)
             
     with allure.step("Validate response"):
-        assert response.status_code == 200
+          if expected_valid:
+              assert response.status_code == 200
+          else:
+              assert response.status_code == 404
+
         assert_response_time(response)
 
     response_data = safe_json(response)
