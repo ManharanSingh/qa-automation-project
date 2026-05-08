@@ -22,8 +22,11 @@ def test_get_product_parametrized(product_service, product_id, expected_valid):
     allure.dynamic.title(f"Validate product API for ID: {product_id}")
 
     with allure.step("Send request"):
-        response = product_service.get_product(product_id)
-
+        if expected_valid:
+            response = product_service.get_product(product_id)
+        else:
+            response = product_service.get_product_unvalidated(product_id)
+            
     with allure.step("Validate response"):
         assert response.status_code == 200
         assert_response_time(response)
