@@ -1,7 +1,7 @@
-2026-05-10 02:16:34,597 - INFO - Opening login page
-2026-05-10 02:16:35,113 - INFO - Entering username and password
-2026-05-10 02:16:35,395 - INFO - Adding item to cart
-2026-05-10 02:16:35,427 - INFO - Navigating to cart page
-2026-05-10 02:16:35,477 - INFO - Cart count after adding item: 1
-2026-05-10 02:16:35,515 - INFO - Cart count after removing item: 0
-2026-05-10 02:16:35,515 - INFO - verifying empty cart
+2026-05-10 02:34:48,180 - INFO - Opening login page
+2026-05-10 02:34:48,537 - INFO - Entering username and password
+2026-05-10 02:34:48,856 - INFO - Adding item to cart
+2026-05-10 02:34:48,895 - INFO - Navigating to cart page
+2026-05-10 02:34:48,948 - INFO - Cart count after adding item: 1
+2026-05-10 02:34:49,002 - INFO - Cart count after removing item: 0
+2026-05-10 02:34:49,002 - INFO - verifying empty cart
