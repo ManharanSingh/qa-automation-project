@@ -24,9 +24,8 @@ jobs:
     
     - name: Clean old reports
       run: |
-          rm -rf Ecommerce_UI_Automation_Framework/reports
-          mkdir -p Ecommerce_UI_Automation_Framework/reports
-    
+          rm -rf Ecommerce_UI_Automation_Framework/reports/report.html
+          
     - name: Run tests
       working-directory: Ecommerce_UI_Automation_Framework
       run: |
@@ -37,3 +36,14 @@ jobs:
       with:
         name: pytest-report
         path: Ecommerce_UI_Automation_Framework/reports/report.html
+        
+    - name: Commit new report
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+
+        git add Ecommerce_UI_Automation_Framework/reports/report.html
+
+        git commit -m "Update automation test report" || echo "No changes to commit"
+
+        git push
