@@ -50,7 +50,6 @@ ecommerce-ui-automation-framework/
 ├── tests/          # Test cases
 ├── utils/          # BasePage & Logger
 ├── config/         # Configurations
-├── reports/        # Test reports
 ├── screenshots/    # Failure screenshots
 ├── logs/           # Execution logs
 ├── conftest.py     # Pytest fixtures & hooks
