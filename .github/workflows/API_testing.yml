@@ -31,3 +31,9 @@ jobs:
         working-directory: "API_Automation_Framework_(E-commerce)"
         run: |
           python -m pytest --alluredir=allure-results
+          
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: allure-pytest-report
+            path: "API_Automation_Framework_(E-commerce)/reports/allure-results"
