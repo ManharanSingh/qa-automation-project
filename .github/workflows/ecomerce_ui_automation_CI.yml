@@ -1,14 +1,14 @@
-name: Ecomerce UI Automation Tests
+name: Ecommerce UI Automation Tests
 
 on:
   push:
     branches: [ main ]
-  
-permissions: 
+
+permissions:
   contents: write
-  
+
 jobs:
-  test:
+  test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,20 +23,24 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r Ecommerce_UI_Automation_Framework/requirements.txt
-    
-    - name: Clean old reports
+
+    - name: Clean old report
       run: |
-          rm -f Ecommerce_UI_Automation_Framework/reports/report.html
-          
+        rm -f Ecommerce_UI_Automation_Framework/reports/index.html
+
     - name: Run tests
       working-directory: Ecommerce_UI_Automation_Framework
       run: |
-        python -m pytest tests --html=reports/index.html --self-contained-html
-        
-    - name: Upload test report
+        pytest tests --html=reports/index.html --self-contained-html
+
+    - name: Upload report artifact
       uses: actions/upload-artifact@v4
       with:
         name: pytest-report
-        path: Ecommerce_UI_Automation_Framework/reports/report.html
-        
-   
+        path: Ecommerce_UI_Automation_Framework/reports/index.html
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./Ecommerce_UI_Automation_Framework/reports
