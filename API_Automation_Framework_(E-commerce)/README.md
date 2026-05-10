@@ -213,7 +213,7 @@ Features:
 ## 1. Clone Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/ManharanSingh/qa-automation-project/tree/main/API_Automation_Framework_(E-commerce)
 ```
 
 ---
