@@ -3,8 +3,10 @@ name: Ecomerce UI Automation Tests
 on:
   push:
     branches: [ main ]
-  pull_request:
-
+  
+permissions: 
+  contents: write
+  
 jobs:
   test:
     runs-on: ubuntu-latest
