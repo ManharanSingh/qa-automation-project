@@ -21,15 +21,19 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r Ecommerce_UI_Automation_Framework/requirements.txt
-
+    
+    - name: Clean old reports
+      run: |
+          rm -rf Ecommerce_UI_Automation_Framework/reports
+          mkdir -p Ecommerce_UI_Automation_Framework/reports
+    
     - name: Run tests
       working-directory: Ecommerce_UI_Automation_Framework
       run: |
         python -m pytest tests --html=reports/report.html
         
-    - name: Upload screenshots
+    - name: Upload test report
       uses: actions/upload-artifact@v4
       with:
-        name: debug-screenshots
-        path: ecommerce-ui-automation-framework/*.png
-  
+        name: pytest-report
+        path: Ecommerce-UI-Automation-Framework/reports/report.html
