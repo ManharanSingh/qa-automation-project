@@ -36,4 +36,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: pytest-report
-        path: Ecommerce-UI-Automation-Framework/reports/report.html
+        path: Ecommerce_UI_Automation_Framework/reports/report.html
