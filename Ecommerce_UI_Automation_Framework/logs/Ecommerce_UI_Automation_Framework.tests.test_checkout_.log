@@ -1,0 +1,8 @@
+2026-05-10 02:10:24,851 - INFO - Opening login page
+2026-05-10 02:10:25,099 - INFO - Entering username and password
+2026-05-10 02:10:25,353 - INFO - Adding item to cart
+2026-05-10 02:10:25,390 - INFO - Navigating to cart page
+2026-05-10 02:10:25,423 - INFO - Navigating to checkout page
+2026-05-10 02:10:25,452 - INFO - Entering checkout details: first_name=Manharan, last_name=Maravi, zip=501401
+2026-05-10 02:10:25,719 - INFO - Finishing checkout process
+2026-05-10 02:10:25,773 - INFO - Order success message: Thank you for your order!

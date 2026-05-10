@@ -1,0 +1,6 @@
+2026-05-10 02:10:26,085 - INFO - opening login page
+2026-05-10 02:10:26,327 - INFO - Entering username and password
+2026-05-10 02:10:26,568 - INFO - Login successful, verifying URL
+2026-05-10 02:10:26,878 - INFO - opening login page
+2026-05-10 02:10:27,140 - INFO - Entering username and password
+2026-05-10 02:10:27,397 - INFO - login failed with error :epic sadface: sorry, this user has been locked out.
