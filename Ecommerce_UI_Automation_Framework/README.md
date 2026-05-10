@@ -80,6 +80,9 @@ pytest --html=reports/report.html
 ```
 
 ---
+## 🚀 Live Automation Report
+
+[View Latest Test Report](https://manharansingh.github.io/qa-automation-project/)
 
 ## Test Scenarios
 
