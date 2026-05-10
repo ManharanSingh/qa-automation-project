@@ -31,7 +31,7 @@ jobs:
     - name: Run tests
       working-directory: Ecommerce_UI_Automation_Framework
       run: |
-        python -m pytest tests --html=reports/report.html
+        python -m pytest tests --html=reports/report.html --self-contained-html
         
     - name: Upload test report
       uses: actions/upload-artifact@v4
