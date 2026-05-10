@@ -40,7 +40,7 @@ api-framework/
 │
 ├── .github/
 │   └── workflows/
-│       └── tests.yml
+│       └── API_testing.yml
 │
 ├── config/
 │   └── config.py
