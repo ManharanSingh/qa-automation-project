@@ -8,7 +8,8 @@ A user reports that they cannot access any websites even though they are connect
 - WI-FI connected but no internet
 - Yellow warning icon
 - "No Internet" message
-
+  
+---
 ## Possible Causes
 - Router issue
 - incorrect IP configuration
@@ -16,6 +17,7 @@ A user reports that they cannot access any websites even though they are connect
 - ISP outage
 - Network adapter problem
 
+---
 ## Troubleshooting Steps
 ## 1. Verify the WI-FI or Ethernet connection
 Many network issues are caused by simple physical problems, not software.
