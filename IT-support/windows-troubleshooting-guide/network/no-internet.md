@@ -20,7 +20,7 @@ A user reports that they cannot access any websites even though they are connect
 ## 1. Verify the WI-FI or Ethernet connection
 Many network issues are caused by simple physical problems, not software.
 for example:
-- WI-FI is off
+- WI-FI off
 - Ethernet cable not plugged in properly
 - Router power off
 
