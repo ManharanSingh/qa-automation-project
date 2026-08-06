@@ -1,9 +1,9 @@
 # NO Internet Connection
 
-## Problem:
+## Problem
 User cannot access the internet.
 
-## Symptoms:
+## Symptoms
 - No websites open
 - WI-FI connected but no internet
 - yellow warning icon
