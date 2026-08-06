@@ -62,11 +62,11 @@ It shows:
    - IP conflicts
    - APIPA (169.254.x.x)
      
- ##7. Flush the DNS cache
-    ```cmd
+ ## 7. Flush the DNS cache
+  ```cmd
     ipconfig/flushdns
-    ```
-    If the cache is outdated or corrupted , Flushing the cache deletes the old entries so windows requests fresh DNS information.
+  ```  
+  If the cache is outdated or corrupted , Flushing the cache deletes the old entries so windows requests fresh DNS information.
     
  ## 9. Test connectivity
     ```cmd
