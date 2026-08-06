@@ -18,10 +18,16 @@ A user reports that they cannot access any websites even though they are connect
 
 ## Troubleshooting Steps
 ## 1. Verify the WI-FI or Ethernet connection
-- Many network issues are caused by simple physical problems, not software.
-2. Restart the computer.
-3. Restart the router.
-4. check the IP configuration.
+Many network issues are caused by simple physical problems, not software.
+for example:
+- WI-FI is off
+- Ethernet cable not plugged in properly
+- Router power off
+
+## 2. Restart the computer
+- 
+## 3. Restart the router.
+## 4. check the IP configuration.
 ```cmd
 ipconfig/all
 ```
