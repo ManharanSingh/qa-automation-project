@@ -69,10 +69,22 @@ It shows:
   If the cache is outdated or corrupted , Flushing the cache deletes the old entries so windows requests fresh DNS information.
     
  ## 9. Test connectivity
-    ```cmd
+  ```cmd
     ping 8.8.8.8
-    ping google.com
-    ```
+  ```
+  8.8.8.8 is Google's public DNS server. Using its IP address bypasses DNS.
+  If it replies:
+  ```
+    reply from 8.8.8.8
+  ```
+  then:
+  - Internet connection is working.
+  - The issue is probably not with the internet connection itself.
+  ```
+  ping google.com
+  ```
+  This checks whether DNS name resolution is working.
+  
 ## Resolution
 Renewing the IP address restored internet connectivity.
 
