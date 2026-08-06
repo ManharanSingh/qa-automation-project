@@ -49,7 +49,7 @@ It shows:
 - MAC Address
 - DHCP status
   
-5. Renew the IP address
+## 5. Renew the IP address
    ```cmd
    ipconfig/release
    ipconfig/renew
@@ -62,13 +62,13 @@ It shows:
    - IP conflicts
    - APIPA (169.254.x.x)
      
- 7. Flush the DNS cache
+ ##7. Flush the DNS cache
     ```cmd
     ipconfig/flushdns
     ```
     If the cache is outdated or corrupted , Flushing the cache deletes the old entries so windows requests fresh DNS information.
     
- 9. Test connectivity
+ ## 9. Test connectivity
     ```cmd
     ping 8.8.8.8
     ping google.com
