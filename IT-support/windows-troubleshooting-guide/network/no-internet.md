@@ -17,7 +17,7 @@ A user reports that they cannot access any websites even though they are connect
 - Network adapter problem
 
 ## Troubleshooting Steps
-1. Verify the WI-FI or Ethernet connection
+## 1. Verify the WI-FI or Ethernet connection
 - Many network issues are caused by simple physical problems, not software.
 2. Restart the computer.
 3. Restart the router.
