@@ -1,23 +1,24 @@
 # NO Internet Connection
 
-## Problem
-User cannot access the internet.
+## Scenario
+A user reports that they cannot access any websites even though they are connected to WI-FI.
 
 ## Symptoms
 - No websites open
 - WI-FI connected but no internet
-- yellow warning icon
-- no internet
+- Yellow warning icon
+- "No Internet" message
 
-## Possible causes
-- Loose Ethernet cable
-- router issue
+## Possible Causes
+- Router issue
 - incorrect IP configuration
 - DNS issue
 - ISP outage
+- Network adapter problem
 
 ## Troubleshooting Steps
-1. Verify the WI-FI or Ethernet connection.
+1. Verify the WI-FI or Ethernet connection
+   Many network issues are caused by simple physical problems, not software.
 2. Restart the computer.
 3. Restart the router.
 4. check the IP configuration.
@@ -38,10 +39,16 @@ ipconfig/all
     ping 8.8.8.8
     ping google.com
     ```
-## Expected Result
-The user regains internet connectivity and can access websites successfully.
+## Resolution
+Renewing the IP address restored internet connectivity.
 
-## Root Cause
-The issue was caused by an expired DHCP lease.
-Renewing the IP address resolved the problem.
-         
+## Prevention
+- Keep network drivers updated.
+- Restart the router occasionally.
+- Avoid incorrect manual IP settings.
+
+## Related Commands
+- ipconfig
+- ping
+- tracert
+- nslookup
