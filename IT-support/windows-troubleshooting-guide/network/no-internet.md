@@ -24,14 +24,14 @@ User cannot access the internet.
 '''cmd
 ipconfig/all
 5. Renew the IP address
-   '''cmd
+   ```cmd
    ipconfig/release
    ipconfig/renew
  6. Flush the DNS cache
-    '''cmd
+    ```cmd
     ipconfig/flushdns
  7. Test connectivity
-    '''cmd
+    ```cmd
     ping 8.8.8.8
     ping google.com
 
