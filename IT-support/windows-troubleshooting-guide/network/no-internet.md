@@ -23,6 +23,7 @@ User cannot access the internet.
 4. check the IP configuration.
 ```cmd
 ipconfig/all
+---
 5. Renew the IP address
    ```cmd
    ipconfig/release
