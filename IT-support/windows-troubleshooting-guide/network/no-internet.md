@@ -86,7 +86,8 @@ It shows:
   ping google.com
   ```
   This checks whether DNS name resolution is working.
-  
+
+---  
 ## Resolution
 Renewing the IP address restored internet connectivity.
 
