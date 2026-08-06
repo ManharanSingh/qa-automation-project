@@ -23,19 +23,21 @@ User cannot access the internet.
 4. check the IP configuration.
 ```cmd
 ipconfig/all
----
+```
 5. Renew the IP address
    ```cmd
    ipconfig/release
    ipconfig/renew
+   ```
  6. Flush the DNS cache
     ```cmd
     ipconfig/flushdns
+    ```
  7. Test connectivity
     ```cmd
     ping 8.8.8.8
     ping google.com
-
+    ```
 ## Expected Result
 The user regains internet connectivity and can access websites successfully.
 
