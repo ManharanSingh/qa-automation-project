@@ -21,7 +21,7 @@ User cannot access the internet.
 2. Restart the computer.
 3. Restart the router.
 4. check the IP configuration.
-   ```cmd
+```cmd
 ipconfig/all
 5. Renew the IP address
    ```cmd
