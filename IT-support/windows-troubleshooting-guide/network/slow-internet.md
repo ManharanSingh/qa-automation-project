@@ -123,6 +123,39 @@ ipconfig/flushdns
 Removes outdated or corrupted DNS entries that can delay website loading.
 
 ---
+### 9. Update Network Adapter Driver
+Device Manager -> Network Adapters
+
+An outdated or corrupted driver can reduce network performance or cause instability.
+
+---
+### 10. Check Windows Update
+Windows may be downloading updates in the background and using a large portion of your bandwidth.
+
+Pause updates temporarily if appropriate.
+
+---
+### 11. Test with another Device
+Determine whether the problem is with:
+- Your computer
+- The WI-FI network
+- The ISP
+
+If all device are slow, the issue is likely with the router or ISP.
+
+---
+### 12. Contact the ISP
+If all troubleshooting steps fail and multiple devices experience slow internet, the problem may be outside your local network.
+
+---
+## prevention
+- Keep router firmware updated.
+- Place the router in a central location.
+- Limit unnecessary background downloads.
+- Restart the router periodically.
+- Keep network drivers updated.
+
+---
 
 
 
