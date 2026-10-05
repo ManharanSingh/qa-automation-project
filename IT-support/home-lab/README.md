@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build a practical IT Support home lab to develop
+I built a practical IT Support home lab to develop
 hands-on skills in Windows administration,
 network troubleshooting, user management,
 PowerShell, and technical documentation.
