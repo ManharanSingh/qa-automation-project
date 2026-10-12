@@ -16,7 +16,7 @@ This repository documents common Windows issues and demonstrates a structured ap
 
 | Category | Topics |
 |---|---|
-| Network Troubleshooting | IP configuration, connectivity, DNS, and gateway issues |
+| Network connectivity | IP configuration, connectivity, DNS, and gateway issues |
 | System Performance | High CPU, memory usage, disk usage, and slow startup |
 | Windows Services | Service status, startup types, and service failures |
 | Application Support | Applications crashing, freezing, or failing to launch |
