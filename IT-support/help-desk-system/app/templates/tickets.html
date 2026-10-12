@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ticket Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #222;
+            color: white;
+        }
+
+        .priority {
+            font-weight: bold;
+        }
+
+        .empty {
+            background: white;
+            padding: 25px;
+        }
+
+        td a{
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        td a:hover{
+            text-decoration: underline;
+        }
+        .filters {
+            display: grid;
+            grid-template-columns: minmax(200px, 2fr) repeat(2, minmax(130px, 1fr)) auto auto;
+            gap: 12px;
+            align-items: end;
+            background: white;
+            padding: 18px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .filter-field label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .filter-field input,
+        .filter-field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: white;
+        }
+
+        .filter-button {
+            padding: 11px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .clear-link {
+            color: #2563eb;
+            text-decoration: none;
+            padding: 10px 0;
+            white-space: nowrap;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            background: white;
+        }
+
+        @media (max-width: 850px) {
+            .filters {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            
+            .search-field {
+                grid-column: 1 / -1;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            body {
+                padding: 15px;
+            }
+            
+            .filters {
+                grid-template-columns: 1fr;
+            }
+
+            .search-field {
+                grid-column: auto;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>IT Support Tickets</h1>
+    
+    <form class="filters" method="GET" action="{{ url_for('tickets') }}">
+        <div class="filter-field search-field">
+            <label for="search">Search tickets</label>
+            <input
+            type="text"
+            id="search"
+            name="search"
+            value="{{ search }}"
+            placeholder="ID, title, requester, email..."
+            >
+        </div>
+
+        <div class="filter-field">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="">All statuses</option>
+                {% for option in ["Open", "In Progress", "Resolved", "Closed"] %}
+                <option value="{{ option }}"
+                    {% if status_filter == option %}selected{% endif %}>
+                    {{ option }}
+                </option>
+                {% endfor %}
+           </select>
+        </div>
+
+        <div class="filter-field">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority">
+                <option value="">All priorities</option>
+                {% for option in ["Low", "Medium", "High", "Critical"] %}
+                <option value="{{ option }}"
+                    {% if priority_filter == option %}selected{% endif %}>
+                    {{ option }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="filter-button" type="submit">
+            Apply
+        </button>
+        
+        <a class="clear-link" href="{{ url_for('tickets') }}">
+            Clear
+        </a>
+    </form>
+
+
+    {% if tickets %}
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>User</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for ticket in tickets %}
+                <tr>
+                    <td>#{{ ticket.id }}</td>
+                    <td>
+                        <a href="{{url_for('tickets_details', ticket_id=ticket.id)}}">
+                            {{ ticket.title }}
+                        </a>
+                    </td>
+                    
+                    <td>{{ ticket.user_name }}
+
+                    </td>
+                    
+                    <td>{{ ticket.category }}
+
+                    </td>
+
+                    <td class="priority">
+                    {{ ticket.priority }}
+                    </td>
+                    
+                    <td>
+                    {{ ticket.status }}
+                    </td>
+                    
+                    <td>
+                    {{ ticket.created_at.strftime("%Y-%m-%d %H:%M") }}
+                    </td>
+                
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+
+    {% else %}
+    <div class="empty">
+        No tickets match your search or filters.
+        <a href="{{ url_for('tickets') }}">Clear filters</a>
+    </div> 
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
