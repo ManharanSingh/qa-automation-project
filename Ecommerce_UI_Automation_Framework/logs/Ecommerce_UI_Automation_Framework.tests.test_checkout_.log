@@ -1,8 +1,8 @@
-2026-10-12 10:41:58,705 - INFO - Opening login page
-2026-10-12 10:41:58,915 - INFO - Entering username and password
-2026-10-12 10:41:59,157 - INFO - Adding item to cart
-2026-10-12 10:41:59,211 - INFO - Navigating to cart page
-2026-10-12 10:41:59,244 - INFO - Navigating to checkout page
-2026-10-12 10:41:59,273 - INFO - Entering checkout details: first_name=Manharan, last_name=Maravi, zip=501401
-2026-10-12 10:41:59,548 - INFO - Finishing checkout process
-2026-10-12 10:41:59,605 - INFO - Order success message: Thank you for your order!
+2026-10-12 10:45:02,354 - INFO - Opening login page
+2026-10-12 10:45:02,546 - INFO - Entering username and password
+2026-10-12 10:45:02,788 - INFO - Adding item to cart
+2026-10-12 10:45:02,854 - INFO - Navigating to cart page
+2026-10-12 10:45:02,893 - INFO - Navigating to checkout page
+2026-10-12 10:45:02,938 - INFO - Entering checkout details: first_name=Manharan, last_name=Maravi, zip=501401
+2026-10-12 10:45:03,284 - INFO - Finishing checkout process
+2026-10-12 10:45:03,341 - INFO - Order success message: Thank you for your order!
