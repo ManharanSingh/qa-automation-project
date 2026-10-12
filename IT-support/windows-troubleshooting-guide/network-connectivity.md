@@ -226,4 +226,3 @@ Effective network troubleshooting separates several distinct questions:
 
 **Project:** Windows Troubleshooting Guide  
 **Platform:** Windows 10 and Windows 11  
-**Status:** Initial documentation draft
