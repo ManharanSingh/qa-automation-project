@@ -16,7 +16,7 @@ This repository documents common Windows issues and demonstrates a structured ap
 
 | Category | Topics |
 |---|---|
-| Network Connectivity (IT-support/windows-troubleshooting-guide/troubleshooting/network-connectivity.md) | IP configuration, connectivity, DNS, and gateway issues |
+| [Network Connectivity](/troubleshooting/network-connectivity.md) | IP configuration, connectivity, DNS, and gateway issues |
 | System Performance | High CPU, memory usage, disk usage, and slow startup |
 | Windows Services | Service status, startup types, and service failures |
 | Application Support | Applications crashing, freezing, or failing to launch |
