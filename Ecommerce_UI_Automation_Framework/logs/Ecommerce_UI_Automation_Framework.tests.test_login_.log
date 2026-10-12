@@ -1,6 +1,6 @@
-2026-10-12 08:41:05,517 - INFO - opening login page
-2026-10-12 08:41:05,740 - INFO - Entering username and password
-2026-10-12 08:41:05,984 - INFO - Login successful, verifying URL
-2026-10-12 08:41:06,454 - INFO - opening login page
-2026-10-12 08:41:06,675 - INFO - Entering username and password
-2026-10-12 08:41:06,947 - INFO - login failed with error :epic sadface: sorry, this user has been locked out.
+2026-10-12 08:43:29,678 - INFO - opening login page
+2026-10-12 08:43:29,872 - INFO - Entering username and password
+2026-10-12 08:43:30,010 - INFO - Login successful, verifying URL
+2026-10-12 08:43:30,392 - INFO - opening login page
+2026-10-12 08:43:30,606 - INFO - Entering username and password
+2026-10-12 08:43:30,762 - INFO - login failed with error :epic sadface: sorry, this user has been locked out.
