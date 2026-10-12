@@ -88,19 +88,6 @@ Commands will be accompanied by explanations, diagnostic interpretations, and su
 - Back up important data before performing higher-risk repairs.
 - Verify system behavior after every corrective change.
 
-## 📈 Project Status
-
-**Status:** In progress
-
-The knowledge base is being built incrementally, with each guide documenting a repeatable troubleshooting scenario.
-
-## 👨‍💻 Intended Audience
-
-- Aspiring IT Support Engineers
-- Help Desk Technicians
-- Desktop Support Technicians
-- Beginners learning Windows administration
-
 ## ⚠️ Disclaimer
 
 This is an educational portfolio project. Procedures should be tested in a suitable environment before being used on production systems. Diagnostic results can vary depending on Windows version, configuration, permissions, and network environment.
